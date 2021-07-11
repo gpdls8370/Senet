@@ -1,2 +1,2 @@
 # Senet
-Game Project
+사용 유니티 버전 : 2019.4.21f1
