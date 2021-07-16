@@ -1,35 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class CharacterDash : MonoBehaviour
 {
-    private InputManager _inputManager;
     private KeyCode dashKey;
 
     private CharacterMovement _characterMovement;
+    private Rigidbody2D rb;
 
     private bool isDashing = false;
+    private bool cooldownReady = true;
     private float dashTime;
-    private Vector3 dashDestination;
-    private Vector3 newPosition;
+    private Vector2 dashDestination;
+    private Vector2 newPosition;
 
     [Header("Dash")]
     public float DashDuration;
     public float DashDistance;
+    public float DashCoolTime;
+
+    [Header("Cannot Move Layer")]
+    public String CannotMoveLayer;
 
 
     void Awake()
     {
-        _inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();
-        dashKey = _inputManager.Dash;
+        dashKey = InputManager.Instance.Dash;
         _characterMovement = GetComponent<CharacterMovement>();
+        rb = GetComponent<Rigidbody2D>();
     }
-
 
     void Update()
     {
-        if (Input.GetKeyDown(dashKey))
+        if (Input.GetKeyDown(dashKey) && cooldownReady)
         {
             DashStart();
         }
@@ -38,9 +42,9 @@ public class CharacterDash : MonoBehaviour
         {
             if (dashTime < DashDuration)
             {
-                newPosition = Vector3.Lerp(this.transform.position, dashDestination, 0.1f);
+                newPosition = Vector2.Lerp(rb.position, dashDestination, dashTime/DashDuration);
                 dashTime += Time.deltaTime;
-                this.transform.position = newPosition;
+                rb.position = newPosition;
             }
             else
             {
@@ -51,9 +55,31 @@ public class CharacterDash : MonoBehaviour
 
     private void DashStart()
     {
+        StartCoroutine("CoolDown");
         isDashing = true;
         dashTime = 0f;
-        dashDestination = this.transform.position + _characterMovement.moveDirection * DashDistance;
+        dashDestination = GetDashDestination(_characterMovement.moveDirection, DashDistance);
     }
 
+    IEnumerator CoolDown()
+    {
+        cooldownReady = false;
+        yield return new WaitForSeconds(DashCoolTime);
+        cooldownReady = true;
+    }
+
+    private Vector2 GetDashDestination (Vector2 dir, float distance)
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, dir, distance, 1 << LayerMask.NameToLayer(CannotMoveLayer));
+
+        if (ray.collider == null)
+        {
+            return rb.position + dir * distance;
+        }
+        else   //장애물에 막히면
+        {
+            return ray.point;
+        }
+    }
+    
 }

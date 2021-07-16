@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private InputManager _inputManager;
     private KeyCode leftMoveKey;
     private KeyCode rightMoveKey;
     private KeyCode upMoveKey;
     private KeyCode downMoveKey;
+    private Vector2 movement;
+    private Rigidbody2D rb;
+    public Animator animator;
 
-    private Vector3 movement;
 
     [Header("Speed")]
     public float WalkSpeed;
@@ -18,30 +17,33 @@ public class CharacterMovement : MonoBehaviour
     [HideInInspector]
     public float nowSpeed;
     [HideInInspector]
-    public Vector3 moveDirection;
+    public Vector2 moveDirection;
 
 
     void Awake()
     {
-        _inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();
-        leftMoveKey = _inputManager.LeftMove;
-        rightMoveKey = _inputManager.RightMove;
-        upMoveKey = _inputManager.UpMove;
-        downMoveKey = _inputManager.DownMove;
+        leftMoveKey = InputManager.Instance.LeftMove;
+        rightMoveKey = InputManager.Instance.RightMove;
+        upMoveKey = InputManager.Instance.UpMove;
+        downMoveKey = InputManager.Instance.DownMove;
         nowSpeed = WalkSpeed;
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        movement = Vector3.zero;
+        movement = Vector2.zero;
 
         if (Input.GetKey(leftMoveKey))
         {
             movement.x -= nowSpeed;
+            transform.localScale = new Vector3(-1, 1, 1);   //왼쪽 바라보기
         }
         if (Input.GetKey(rightMoveKey))
         {
             movement.x += nowSpeed;
+            transform.localScale = new Vector3(1, 1, 1);
         }
         if (Input.GetKey(upMoveKey))
         {
@@ -52,7 +54,15 @@ public class CharacterMovement : MonoBehaviour
             movement.y -= nowSpeed;
         }
 
-        transform.transform.Translate(movement);
-        moveDirection = movement.normalized;
+        if (movement != Vector2.zero)
+        {
+            rb.position += movement;
+            moveDirection = movement.normalized;
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }
     }
 }

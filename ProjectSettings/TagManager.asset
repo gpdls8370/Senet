@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3878039851
+    locked: 0
+  - name: OnGround
+    uniqueID: 1852315863
     locked: 0
   - name: Player
     uniqueID: 195048747
