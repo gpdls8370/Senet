@@ -8,6 +8,9 @@ public class InputManager : Singleton<InputManager>
     public KeyCode UpMove;
     public KeyCode DownMove;
 
+    [Header("Run")]
+    public KeyCode Run;
+
     [Header("Dash")]
     public KeyCode Dash;
 

@@ -8,16 +8,20 @@ public class CharacterMovement : MonoBehaviour
     private KeyCode downMoveKey;
     private Vector2 movement;
     private Rigidbody2D rb;
-    public Animator animator;
+    public ParticleSystem FootSteps;
 
+    public Animator animator;
 
     [Header("Speed")]
     public float WalkSpeed;
+    public float RunSpeed;
     
     [HideInInspector]
     public float nowSpeed;
     [HideInInspector]
     public Vector2 moveDirection;
+    [HideInInspector]
+    public bool isMoving = false;
 
 
     void Awake()
@@ -38,12 +42,12 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKey(leftMoveKey))
         {
             movement.x -= nowSpeed;
-            transform.localScale = new Vector3(-1, 1, 1);   //왼쪽 바라보기
+            transform.localScale = new Vector3(1, 1, 1);   //왼쪽 바라보기
         }
         if (Input.GetKey(rightMoveKey))
         {
             movement.x += nowSpeed;
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         if (Input.GetKey(upMoveKey))
         {
@@ -56,13 +60,27 @@ public class CharacterMovement : MonoBehaviour
 
         if (movement != Vector2.zero)
         {
-            rb.position += movement;
-            moveDirection = movement.normalized;
-            animator.SetBool("Walking", true);
+            WalkStart();
         }
         else
         {
-            animator.SetBool("Walking", false);
+            WalkStop();
         }
+    }
+
+    private void WalkStart()
+    {
+        isMoving = true;
+        rb.position += movement;
+        moveDirection = movement.normalized;
+        animator.SetBool("Walking", true);
+        FootSteps.Play();
+    }
+
+    private void WalkStop()
+    {
+        isMoving = false;
+        animator.SetBool("Walking", false);
+        FootSteps.Stop();
     }
 }
