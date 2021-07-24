@@ -6,26 +6,24 @@ public class CharacterRun : MonoBehaviour
 {
     private KeyCode runKey;
     private CharacterMovement _characterMovement;
-    private Animator animator;
 
     void Awake()
     {
         runKey = InputManager.Instance.Run;
         _characterMovement = GetComponent<CharacterMovement>();
-        animator = _characterMovement.animator;
     }
 
 
     void Update()
     {
-        if (Input.GetKey(runKey))
+        if (Input.GetKey(runKey)) 
         {
-            if (_characterMovement.isMoving)
+            if (_characterMovement.isMoving && !StateManager.Instance.isHiding())
             {
                 RunStart();
             }
         }
-        if (Input.GetKeyUp(runKey))
+        if (Input.GetKeyUp(runKey) && StateManager.Instance.isRunning())
         {
             RunStop();
         }
@@ -33,13 +31,13 @@ public class CharacterRun : MonoBehaviour
 
     private void RunStart()
     {
-        animator.SetBool("Running", true);
+        StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Run);
         _characterMovement.nowSpeed = _characterMovement.RunSpeed;
     }
 
     private void RunStop()
     {
-        animator.SetBool("Running", false);
+        StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Idle);
         _characterMovement.nowSpeed = _characterMovement.WalkSpeed;
     }
 }

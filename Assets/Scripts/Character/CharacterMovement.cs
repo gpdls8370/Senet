@@ -10,7 +10,6 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     public ParticleSystem FootSteps;
 
-    public Animator animator;
 
     [Header("Speed")]
     public float WalkSpeed;
@@ -71,16 +70,20 @@ public class CharacterMovement : MonoBehaviour
     private void WalkStart()
     {
         isMoving = true;
+
+        if (!StateManager.Instance.isRunning() && !StateManager.Instance.isWalking())
+        {
+            StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Walk);
+        }
         rb.position += movement;
         moveDirection = movement.normalized;
-        animator.SetBool("Walking", true);
         FootSteps.Play();
     }
 
     private void WalkStop()
     {
         isMoving = false;
-        animator.SetBool("Walking", false);
+        StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Idle);
         FootSteps.Stop();
     }
 }
