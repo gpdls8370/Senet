@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SleepCycle : MonoBehaviour
 {
+    public GameObject PatrolObject;
     public float SleepTime;
     public float AwakeTime;
-    public GameObject PatrolObject;
 
-    private HideSkill _hideSkill;
+    public GameObject DetectedIcon;
+
+    [HideInInspector]
     public bool isAwake;
 
     private Animator animator;
@@ -16,27 +18,36 @@ public class SleepCycle : MonoBehaviour
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        _hideSkill = PatrolObject.GetComponent<HideSkill>();
         StartCoroutine("SleepTimeCoroutine");
     }
 
     private IEnumerator SleepTimeCoroutine()
     {
-        isAwake = false;
-        animator.SetBool("Sleep", true);
-        animator.SetBool("Awake", false);
-
+        SetSleep();
+        
         yield return new WaitForSeconds(SleepTime);
         StartCoroutine("AwakeTimeCoroutine");
     }
 
     private IEnumerator AwakeTimeCoroutine()
     {
-        isAwake = true;
-        animator.SetBool("Sleep", false);
-        animator.SetBool("Awake", true);
+        SetAwake();
 
         yield return new WaitForSeconds(AwakeTime);
         StartCoroutine("SleepTimeCoroutine");
+    }
+
+    public void SetSleep()
+    {
+        isAwake = false;
+        animator.SetBool("Sleep", true);
+        animator.SetBool("Awake", false);
+    }
+
+    public void SetAwake()
+    {
+        isAwake = true;
+        animator.SetBool("Sleep", false);
+        animator.SetBool("Awake", true);
     }
 }

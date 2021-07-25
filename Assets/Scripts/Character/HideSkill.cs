@@ -11,10 +11,8 @@ public class HideSkill : MonoBehaviour
     public float HideSpeed;
     public float HideAlpha = 0.5f;
 
-    private bool CanHide = false;
-    private bool MustHide = false;
-    private bool isExitTrigger = false;
-    Collider2D collision;
+    [HideInInspector]
+    public bool CanHide = false;
 
     private void Awake()
     {
@@ -36,55 +34,9 @@ public class HideSkill : MonoBehaviour
             HideEnd();
         }
 
-        if (MustHide && !StateManager.Instance.isHiding() && !StateManager.Instance.isDead())
+        if (StateManager.Instance.isHiding() && !CanHide)
         {
-            StateManager.Instance.SetDead();
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        isExitTrigger = false;
-
-        if (col.tag == "HideZone")
-        {
-            CanHide = true;
-            if (col.GetComponentInParent<SleepCycle>().isAwake && !StateManager.Instance.isDead())
-            {
-                StateManager.Instance.SetDead();
-            }
-        }
-        if (col.tag == "MustHideZone")
-        {
-            MustHide = true;
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        isExitTrigger = true;
-
-        collision = col;
-        Invoke("ExitTrigger", 0.01f);
-        
-    }
-
-    private void ExitTrigger()
-    {
-        if (isExitTrigger)
-        {
-            if (collision.tag == "HideZone")
-            {
-                CanHide = false;
-                if (StateManager.Instance.isHiding())
-                {
-                    HideEnd();
-                }
-            }
-            if (collision.tag == "MustHideZone")
-            {
-                MustHide = false;
-            }
+            HideEnd();
         }
     }
 
@@ -95,7 +47,7 @@ public class HideSkill : MonoBehaviour
         _spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
     }
 
-    private void HideEnd()
+    public void HideEnd()
     {
         _characterMovement.nowSpeed = _characterMovement.WalkSpeed;
         StateManager.Instance.SetSkillState(StateManager.SkillStates.Idle);
