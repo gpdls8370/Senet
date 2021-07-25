@@ -691,6 +691,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SleepEnemyBlack
       objectReference: {fileID: 0}
+    - target: {fileID: 6195000526723922298, guid: 2cde08af918223643b7512f7699bce59,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.83129036
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195000526723922298, guid: 2cde08af918223643b7512f7699bce59,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.019
+      objectReference: {fileID: 0}
     - target: {fileID: 6195000527527853571, guid: 2cde08af918223643b7512f7699bce59,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -720,6 +730,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2603438056903886750, guid: 8eeed10e5ac55494eb9338e3d9485ca6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.83239
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603438056903886750, guid: 8eeed10e5ac55494eb9338e3d9485ca6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2603438058244554983, guid: 8eeed10e5ac55494eb9338e3d9485ca6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -739,6 +759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756391663735734019, guid: 8eeed10e5ac55494eb9338e3d9485ca6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8023481368555336128, guid: 8eeed10e5ac55494eb9338e3d9485ca6,
         type: 3}
@@ -814,6 +839,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7865178161089372726, guid: 6152c051ecdba144ab2de37764662a4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae338cae3b0584a4aaf06b3a0811f5ab,
+        type: 3}
+    - target: {fileID: 7865178161292718690, guid: 6152c051ecdba144ab2de37764662a4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865178161292718691, guid: 6152c051ecdba144ab2de37764662a4b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7865178161461575424, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_Name
