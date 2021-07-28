@@ -10,13 +10,27 @@ public class HideZone : MonoBehaviour
 
     private HideSkill _hideSkill;
     private SleepCycle _sleepCycle;
+    private NpcSentence _npcSentence;
     private bool isExitTrigger = false;
     private Collider2D collision;
+
+
+    private bool isDetected = false;
 
     private void Awake()
     {
         _hideSkill = StateManager.Instance.Player.GetComponent<HideSkill>();
         _sleepCycle = GetComponentInParent<SleepCycle>();
+        _npcSentence = GetComponentInParent<NpcSentence>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player" && !UIManager.Instance.HideSkillPopUp)
+        {
+            UIManager.Instance.HidePanel_Enable();
+            UIManager.Instance.HideSkillPopUp = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D col)
@@ -35,7 +49,7 @@ public class HideZone : MonoBehaviour
                 Detected();
             }
 
-            if (_sleepCycle.isAwake)
+            else if (_sleepCycle.isAwake)
             {
                 Detected();
             }
@@ -65,8 +79,14 @@ public class HideZone : MonoBehaviour
 
     private void Detected()
     {
-        _sleepCycle.SetAwake();
-        StateManager.Instance.SetDead();
-        _sleepCycle.DetectedIcon.SetActive(true);
-    }
+        if (!isDetected) 
+        {
+            isDetected = true;
+            StateManager.Instance.SetDead();
+            _sleepCycle.SetAwake();
+            _sleepCycle.StopAllCoroutines();
+            _sleepCycle.DetectedIcon.SetActive(true);
+            _npcSentence.TalkNpc();
+        }
+    }    
 }

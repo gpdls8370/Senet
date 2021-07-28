@@ -50,4 +50,5 @@ public class SleepCycle : MonoBehaviour
         animator.SetBool("Sleep", false);
         animator.SetBool("Awake", true);
     }
+
 }

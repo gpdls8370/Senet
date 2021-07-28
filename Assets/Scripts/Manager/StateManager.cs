@@ -41,12 +41,12 @@ public class StateManager : Singleton<StateManager>
 
     public void SetDead()
     {
-        Debug.Log("Dead");
-
-        
         nowPlayerState = PlayerStates.Dead;
-        animator.SetBool("Dead", nowPlayerState == PlayerStates.Dead);
-        
+        animator.SetBool("Dead", nowPlayerState == PlayerStates.Dead);  
+    }
+
+    public void Pause()
+    {
         Time.timeScale = 0;
     }
 
