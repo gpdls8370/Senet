@@ -43,14 +43,14 @@ public class HideSkill : MonoBehaviour
     private void HideStart()
     {
         _characterMovement.nowSpeed = HideSpeed;
-        StateManager.Instance.SetSkillState(StateManager.SkillStates.Hide);
+        StateManager.Instance.SetPlayerState(StateManager.SkillStates.Hide);
         _spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
     }
 
     public void HideEnd()
     {
         _characterMovement.nowSpeed = _characterMovement.WalkSpeed;
-        StateManager.Instance.SetSkillState(StateManager.SkillStates.Idle);
+        StateManager.Instance.SetPlayerState(StateManager.SkillStates.Idle);
         _spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
     }
 

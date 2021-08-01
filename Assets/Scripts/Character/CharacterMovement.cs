@@ -41,12 +41,10 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKey(leftMoveKey))
         {
             movement.x -= nowSpeed;
-            transform.localScale = new Vector3(1, 1, 1);   //왼쪽 바라보기
         }
         if (Input.GetKey(rightMoveKey))
         {
             movement.x += nowSpeed;
-            transform.localScale = new Vector3(-1, 1, 1);
         }
         if (Input.GetKey(upMoveKey))
         {
@@ -73,17 +71,18 @@ public class CharacterMovement : MonoBehaviour
 
         if (!StateManager.Instance.isRunning() && !StateManager.Instance.isWalking())
         {
-            StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Walk);
+            StateManager.Instance.SetMovementState(StateManager.MovementStates.Walk);
         }
         rb.position += movement;
         moveDirection = movement.normalized;
+        StateManager.Instance.UpdateWalkingDirection(moveDirection);
         FootSteps.Play();
     }
 
     private void WalkStop()
     {
         isMoving = false;
-        StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Idle);
+        StateManager.Instance.SetMovementState(StateManager.MovementStates.Idle);
         FootSteps.Stop();
     }
 }
