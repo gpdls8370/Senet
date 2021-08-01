@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StateManager : Singleton<StateManager>
 {
-    public enum PlayerStates { Idle, Walk, Run, Dead }
-    public enum SkillStates { Idle, Hide  }
-    public PlayerStates nowPlayerState;
+    public enum MovementStates { Idle, Walk, Run, Dead }
+    public enum SkillStates { Idle, Hide }
+    public MovementStates nowMovementState;
     public SkillStates nowSkillState;
 
     public GameObject Player;
@@ -19,13 +19,13 @@ public class StateManager : Singleton<StateManager>
         animator = Player.GetComponentInChildren<Animator>();
     }
 
-    public void SetPlayerState(PlayerStates state)
+    public void SetMovementState(MovementStates state)
     {
-        nowPlayerState = state;
+        nowMovementState = state;
         UpdateAnimator();
     }
 
-    public void SetSkillState(SkillStates state)
+    public void SetPlayerState(SkillStates state)
     {
         nowSkillState = state;
         UpdateAnimator();
@@ -33,16 +33,22 @@ public class StateManager : Singleton<StateManager>
 
     private void UpdateAnimator()
     {
-        animator.SetBool("Idle", nowPlayerState == PlayerStates.Idle);
-        animator.SetBool("Walking", nowPlayerState == PlayerStates.Walk);
-        animator.SetBool("Running", nowPlayerState == PlayerStates.Run);
-        animator.SetBool("Hide", nowSkillState == SkillStates.Hide);
+        animator.SetBool("Idle", nowMovementState == MovementStates.Idle);
+        animator.SetBool("Walking", nowMovementState == MovementStates.Walk);
+        animator.SetBool("Running", nowMovementState == MovementStates.Run);
+        //animator.SetBool("Hide", nowSkillState == SkillStates.Hide);
+    }
+
+    public void UpdateWalkingDirection(Vector2 direction)
+    {
+        animator.SetFloat("DirectionX", direction.x);
+        animator.SetFloat("DirectionY", direction.y);
     }
 
     public void SetDead()
     {
-        nowPlayerState = PlayerStates.Dead;
-        animator.SetBool("Dead", nowPlayerState == PlayerStates.Dead);  
+        nowMovementState = MovementStates.Dead;
+        animator.SetBool("Dead", nowMovementState == MovementStates.Dead);  
     }
 
     public void Pause()
@@ -50,9 +56,9 @@ public class StateManager : Singleton<StateManager>
         Time.timeScale = 0;
     }
 
-
-    public bool isWalking() { return nowPlayerState == PlayerStates.Walk; }
-    public bool isRunning() { return nowPlayerState == PlayerStates.Run; }
+    public bool isWalking() { return nowMovementState == MovementStates.Walk; }
+    public bool isRunning() { return nowMovementState == MovementStates.Run; }
     public bool isHiding() { return nowSkillState == SkillStates.Hide; }
-    public bool isDead() { return nowPlayerState == PlayerStates.Dead; }
+    public bool isDead() { return nowMovementState == MovementStates.Dead; }
+
 }

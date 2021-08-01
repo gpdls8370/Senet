@@ -15,7 +15,7 @@ public class NpcSentence : MonoBehaviour
         Invoke("TalkNpcDelay", StartDelayTime);
     }
 
-    public void TalkNpcDelay()
+    private void TalkNpcDelay()
     {
         chatBox.gameObject.SetActive(true);
         chatBox.GetComponent<ChatSystem>().OnDialogue(sentences, chatTr, NextLineDelayTime);

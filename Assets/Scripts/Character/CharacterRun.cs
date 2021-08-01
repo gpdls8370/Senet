@@ -31,13 +31,13 @@ public class CharacterRun : MonoBehaviour
 
     private void RunStart()
     {
-        StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Run);
+        StateManager.Instance.SetMovementState(StateManager.MovementStates.Run);
         _characterMovement.nowSpeed = _characterMovement.RunSpeed;
     }
 
     private void RunStop()
     {
-        StateManager.Instance.SetPlayerState(StateManager.PlayerStates.Idle);
+        StateManager.Instance.SetMovementState(StateManager.MovementStates.Idle);
         _characterMovement.nowSpeed = _characterMovement.WalkSpeed;
     }
 }
