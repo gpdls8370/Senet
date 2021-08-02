@@ -13,6 +13,7 @@ public class HideZone : MonoBehaviour
     private bool isExitTrigger = false;
     private Collider2D collision;
 
+    
 
     private void Awake()
     {
@@ -28,11 +29,10 @@ public class HideZone : MonoBehaviour
 
             if (!UIManager.Instance.HideSkillPopUp)
             {
-                UIManager.Instance.HidePanel_Enable();
+                UIManager.Instance.Panel_Enable(UIManager.Instance.HideTextPanel);
                 UIManager.Instance.HideSkillPopUp = true;
             }
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D col)
@@ -46,14 +46,17 @@ public class HideZone : MonoBehaviour
                 _hideSkill.CanHide = true;
             }
 
-            if (HideZoneType == HideZoneTypes.MustHideZone && !StateManager.Instance.isHiding())
+            if (!_sleepCycle.isDetected)
             {
-                _sleepCycle.Detected();
-            }
+                if (_sleepCycle.isAwake)
+                {
+                    _sleepCycle.Detected();
+                }
 
-            else if (_sleepCycle.isAwake)
-            {
-                _sleepCycle.Detected();
+                else if (HideZoneType == HideZoneTypes.MustHideZone && !StateManager.Instance.isHiding())
+                {
+                    _sleepCycle.Detected();
+                }           
             }
         }
     }

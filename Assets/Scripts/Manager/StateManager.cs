@@ -56,6 +56,11 @@ public class StateManager : Singleton<StateManager>
         Time.timeScale = 0;
     }
 
+    public void Resume()
+    {
+        Time.timeScale = 1;
+    }
+
     public bool isWalking() { return nowMovementState == MovementStates.Walk; }
     public bool isRunning() { return nowMovementState == MovementStates.Run; }
     public bool isHiding() { return nowSkillState == SkillStates.Hide; }

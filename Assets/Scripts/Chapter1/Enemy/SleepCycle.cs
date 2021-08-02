@@ -15,6 +15,7 @@ public class SleepCycle : MonoBehaviour
 
     [HideInInspector]
     public bool isAwake;
+    public bool isDetected = false;
 
     private Animator animator;
     private NpcSentence _npcSentence;
@@ -63,6 +64,7 @@ public class SleepCycle : MonoBehaviour
         if (!StateManager.Instance.isDead())
         {
             StateManager.Instance.SetDead();
+            isDetected = true;
             SetAwake();
             StopAllCoroutines();
             DetectedIcon.SetActive(true);
