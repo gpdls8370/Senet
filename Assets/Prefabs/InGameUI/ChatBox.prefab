@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5398205726396500259, guid: 4b6cad3788d49b84ab299e674f414e30, type: 2}
+  - {fileID: -8912106024645727797, guid: 0d2d68bdbb50ff449a2d4d9f9c0036c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,7 +174,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!222 &398748155323901552
 CanvasRenderer:
@@ -205,8 +205,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD14C\uC2A4\uD2B8"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4b6cad3788d49b84ab299e674f414e30, type: 2}
-  m_sharedMaterial: {fileID: 5398205726396500259, guid: 4b6cad3788d49b84ab299e674f414e30,
+  m_fontAsset: {fileID: 11400000, guid: 0d2d68bdbb50ff449a2d4d9f9c0036c4, type: 2}
+  m_sharedMaterial: {fileID: -8912106024645727797, guid: 0d2d68bdbb50ff449a2d4d9f9c0036c4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -231,8 +231,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -324,7 +324,7 @@ SortingGroup:
   m_GameObject: {fileID: 2923578724806208094}
   m_Enabled: 1
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!222 &1623305585784820793
 CanvasRenderer:

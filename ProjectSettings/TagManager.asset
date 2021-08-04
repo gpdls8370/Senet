@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HideZone
   - MustHideZone
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Player
   - Obstacles
   - Background
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -40,11 +41,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 3878039851
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: OnGround
     uniqueID: 1852315863

@@ -30,7 +30,7 @@ public class ChatSystem : MonoBehaviour
         {
             currentSentence = sentences.Dequeue();
             text.text = currentSentence;
-            quad.transform.localScale = new Vector2(text.preferredWidth + 2f, text.preferredHeight + 0.5f);
+            quad.transform.localScale = new Vector2(text.preferredWidth + 1.5f, text.preferredHeight + 1f);
 
             yield return new WaitForSeconds(nextDelay);
         }

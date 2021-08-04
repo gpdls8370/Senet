@@ -1,19 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : Singleton<UIManager>
 {
-    public bool HideSkillPopUp = false;
-
     public GameObject Road2_EnterPanel;
     public GameObject Road2_DoorFindPanel;
     public GameObject Road2_RoomMoveTryPanel;
     public GameObject Road4_EnterPanel;
     public GameObject HideTextPanel;
 
-    //패널 띄워야 되는 곳에 Panel_Enable(UIManager.Instance.위에중에패널);
 
     public void Panel_Enable(GameObject panel)
     {
@@ -37,4 +32,9 @@ public class UIManager : Singleton<UIManager>
         StateManager.Instance.Resume();
     }   
 
+    public void RestartScene()
+    {
+        //테스트 빌드 버전에서 사용
+        SceneManager.LoadScene(0);
+    }
 }

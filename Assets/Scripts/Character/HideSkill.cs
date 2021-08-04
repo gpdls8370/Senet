@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HideSkill : MonoBehaviour
@@ -13,6 +12,7 @@ public class HideSkill : MonoBehaviour
 
     [HideInInspector]
     public bool CanHide = false;
+    public int HideZoneCount = 0;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class HideSkill : MonoBehaviour
             HideEnd();
         }
 
-        if (StateManager.Instance.isHiding() && !CanHide)
+        if (StateManager.Instance.isHiding() && !CanHide && HideZoneCount == 0)
         {
             HideEnd();
         }
