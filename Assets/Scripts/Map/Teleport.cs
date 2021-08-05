@@ -31,7 +31,7 @@ public class Teleport : MonoBehaviour
     {
         yield return null;
         targetObj.transform.position = toObj.transform.position;
-        Camera.main.transform.position = new Vector3(CameraMoveTo.position.x, CameraMoveTo.position.y, -30);
+        Chapter1Manager.Instance.MainCamera.transform.position = new Vector3(CameraMoveTo.position.x, CameraMoveTo.position.y, -30);
     }
 
 }

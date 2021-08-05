@@ -5350,6 +5350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8648ab5a51b030479968798f744e8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 1174699191}
   HaveKey: 0
   RockDoorFounded: 0
   HideSkillPopUp: 0
