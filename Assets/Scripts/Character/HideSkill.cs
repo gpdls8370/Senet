@@ -13,6 +13,7 @@ public class HideSkill : MonoBehaviour
     [HideInInspector]
     public bool CanHide = false;
     public int HideZoneCount = 0;
+    private int HideIconVisibleCount = 0;
 
     private void Awake()
     {
@@ -38,6 +39,25 @@ public class HideSkill : MonoBehaviour
         {
             HideEnd();
         }
+
+        if (Chapter1Manager.Instance.HideSkillPopUp)
+        { 
+            if (HideIconVisibleCount == 0)
+            {
+                HideIconVisibleCount++;
+                UIManager.Instance.skillBox.HideIconEnable();
+            }
+
+            if (CanHide)
+            {
+                UIManager.Instance.skillBox.HideIconEnable();
+            }
+            else
+            {
+                UIManager.Instance.skillBox.HideIconUnable();
+            }
+        }
+        
     }
 
     private void HideStart()

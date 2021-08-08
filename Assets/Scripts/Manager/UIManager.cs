@@ -9,6 +9,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject Road4_EnterPanel;
     public GameObject HideTextPanel;
 
+    public SkillBox skillBox;
 
     public void Panel_Enable(GameObject panel)
     {

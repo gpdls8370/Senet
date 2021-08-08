@@ -7,8 +7,6 @@ public class HideZone : MonoBehaviour
     private HideSkill _hideSkill;
     private HideDetect _hideDetect;
     private SleepCycle _sleepCycle;
-    private bool isExitTrigger = false;
-    private Collider2D collision;
 
     private bool mustHide = false;
     public float MustHideDelay = 0.5f;
@@ -38,8 +36,6 @@ public class HideZone : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        isExitTrigger = false;
-
         if (col.tag == "Player")
         {
             if (!_hideDetect.isDetected)
@@ -65,6 +61,7 @@ public class HideZone : MonoBehaviour
         if (col.tag == "Player")
         {
             _hideSkill.CanHide = false;
+            UIManager.Instance.skillBox.HideIconUnable();
             mustHide = false;
             _hideDetect.DetectedIconObject.SetActive(false);
             _hideSkill.HideZoneCount--;
