@@ -36,7 +36,6 @@ public class StateManager : Singleton<StateManager>
         animator.SetBool("Idle", nowMovementState == MovementStates.Idle);
         animator.SetBool("Walking", nowMovementState == MovementStates.Walk);
         animator.SetBool("Running", nowMovementState == MovementStates.Run);
-        //animator.SetBool("Hide", nowSkillState == SkillStates.Hide);
     }
 
     public void UpdateWalkingDirection(Vector2 direction)
@@ -54,6 +53,16 @@ public class StateManager : Singleton<StateManager>
     public void Pause()
     {
         Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void PlayerPause()
+    {
+        Player.GetComponent<CharacterMovement>().enabled = false;
     }
 
     public bool isWalking() { return nowMovementState == MovementStates.Walk; }

@@ -1,20 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : Singleton<UIManager>
 {
+    public GameObject Road2_EnterPanel;
+    public GameObject Road2_DoorFindPanel;
+    public GameObject Road2_RoomMoveTryPanel;
+    public GameObject Road4_EnterPanel;
     public GameObject HideTextPanel;
-    public bool HideSkillPopUp = false;
 
-    public void HidePanel_Enable()
+    public SkillBox skillBox;
+
+    public void Panel_Enable(GameObject panel)
     {
-        HideTextPanel.gameObject.SetActive(true);
+        panel.SetActive(true);
+        StateManager.Instance.Pause();
     }
 
-    public void HidePanel_Endbt()
+    public void Panel_MoveButton_Move(GameObject movePanel)
     {
-        HideTextPanel.gameObject.SetActive(false);
+        movePanel.SetActive(true);
+    }
+
+    public void Panel_MoveButton_NowExit(GameObject nowPanel)
+    {
+        nowPanel.SetActive(false);
+    }
+
+    public void Panel_EndButton(GameObject panel)
+    {
+        panel.SetActive(false);
+        StateManager.Instance.Resume();
+    }   
+
+    public void RestartScene()
+    {
+        //테스트 빌드 버전에서 사용
+        SceneManager.LoadScene(0);
     }
 }

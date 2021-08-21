@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public class DeskInteract : InteractObject
 {
     public bool isKeyDesk;
@@ -16,13 +13,12 @@ public class DeskInteract : InteractObject
     {
         if (isKeyDesk)
         {
-            Debug.Log("열쇠책상");
+            Chapter1Manager.Instance.HaveKey = true;
             _npcSentence.TalkNpc();
         }
 
         else
         {
-            Debug.Log("열쇠없는책상");
             _npcSentence.TalkNpc();
         }
     }

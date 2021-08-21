@@ -1,59 +1,57 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HideZone : MonoBehaviour
 {
-
-    public enum HideZoneTypes { HideZone, MustHideZone }
-    public HideZoneTypes HideZoneType;
-
+    public GameObject TargetEnemy;
     private HideSkill _hideSkill;
+    private HideDetect _hideDetect;
     private SleepCycle _sleepCycle;
-    private bool isExitTrigger = false;
-    private Collider2D collision;
 
+    private bool mustHide = false;
+    public float MustHideDelay = 0.5f;
+    
 
     private void Awake()
     {
         _hideSkill = StateManager.Instance.Player.GetComponent<HideSkill>();
-        _sleepCycle = GetComponentInParent<SleepCycle>();
+        _hideDetect = TargetEnemy.GetComponent<HideDetect>();
+        _sleepCycle = TargetEnemy.GetComponent<SleepCycle>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
-            _sleepCycle.DetectedIcon.SetActive(true);
-
-            if (!UIManager.Instance.HideSkillPopUp)
-            {
-                UIManager.Instance.HidePanel_Enable();
-                UIManager.Instance.HideSkillPopUp = true;
-            }
-        }
-
-    }
-
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        isExitTrigger = false;
-
-        if (col.tag == "Player")
-        {
-            if (HideZoneType == HideZoneTypes.HideZone && !_hideSkill.CanHide)
+            if (!_hideSkill.CanHide)
             {
                 _hideSkill.CanHide = true;
             }
 
-            if (HideZoneType == HideZoneTypes.MustHideZone && !StateManager.Instance.isHiding())
-            {
-                _sleepCycle.Detected();
-            }
+            _hideDetect.DetectedIconObject.SetActive(true);
+            _hideSkill.HideZoneCount++;
+            StartCoroutine(HideTimeCountCoroutine());
+        }
+    }
 
-            else if (_sleepCycle.isAwake)
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            if (!_hideDetect.isDetected)
             {
-                _sleepCycle.Detected();
+                if (_sleepCycle != null) 
+                {
+                    if (_sleepCycle.isAwake)
+                    {
+                        _hideDetect.Detected();
+                    }
+                }
+                
+                if (mustHide && !StateManager.Instance.isHiding())
+                {
+                    _hideDetect.Detected();
+                }           
             }
         }
     }
@@ -62,25 +60,23 @@ public class HideZone : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            isExitTrigger = true;
-            collision = col;
-            Invoke("ExitTrigger", 0.01f);
-
-            _sleepCycle.DetectedIcon.SetActive(false);
+            _hideSkill.CanHide = false;
+            UIManager.Instance.skillBox.HideIconUnable();
+            mustHide = false;
+            _hideDetect.DetectedIconObject.SetActive(false);
+            _hideSkill.HideZoneCount--;
+            StopAllCoroutines();
         }
     }
 
-    private void ExitTrigger()
+    private IEnumerator HideTimeCountCoroutine()
     {
-        if (isExitTrigger)
+        yield return new WaitForSeconds(MustHideDelay);
+        mustHide = true;
+
+        if (!StateManager.Instance.isHiding())
         {
-            if (collision.tag == "Player")
-            {
-                if (HideZoneType == HideZoneTypes.HideZone)
-                {
-                    _hideSkill.CanHide = false;
-                }
-            }
+            _hideDetect.Detected();
         }
-    }   
+    }
 }

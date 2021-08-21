@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InteractObject : MonoBehaviour
 {
@@ -16,7 +14,10 @@ public class InteractObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        trigger = true;
+        if (col.tag == "Player")
+        {
+            trigger = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
