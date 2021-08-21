@@ -749,6 +749,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 81533751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &90311277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3853412926298626023, guid: 93b50731f1ddc224a80a3269d1ecee24,
+    type: 3}
+  m_PrefabInstance: {fileID: 1935035295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &91329109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4042,6 +4048,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 864302649}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &864520649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4480405245843469505, guid: 93b50731f1ddc224a80a3269d1ecee24,
+    type: 3}
+  m_PrefabInstance: {fileID: 1935035295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &867597624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5356,6 +5368,11 @@ MonoBehaviour:
   HideSkillPopUp: 0
   RedLight: {fileID: 353511439}
   YellowLight: {fileID: 909882690}
+  Road2_EnterPanel: {fileID: 2017765588}
+  Road2_DoorFindPanel: {fileID: 864520649}
+  Road2_RoomMoveTryPanel: {fileID: 1519217928}
+  Road4_EnterPanel: {fileID: 90311277}
+  HideTextPanel: {fileID: 1726474490}
 --- !u!1 &1041367895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8256,6 +8273,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1519217928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7928418254587300686, guid: 93b50731f1ddc224a80a3269d1ecee24,
+    type: 3}
+  m_PrefabInstance: {fileID: 1935035295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1519278823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2020878884934232172, guid: df26cb5f73d4b4f468f022ffc7191ba2,
@@ -9561,6 +9584,12 @@ PrefabInstance:
       objectReference: {fileID: 2964494209942918129}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87703fc548a89e945bde2f949ad19f2f, type: 3}
+--- !u!1 &1726474490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9139765985681400442, guid: 93b50731f1ddc224a80a3269d1ecee24,
+    type: 3}
+  m_PrefabInstance: {fileID: 1935035295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1749120076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11247,6 +11276,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1301929277}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2017765588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4967749869213740885, guid: 93b50731f1ddc224a80a3269d1ecee24,
+    type: 3}
+  m_PrefabInstance: {fileID: 1935035295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2028151233
 GameObject:
   m_ObjectHideFlags: 0
@@ -12512,8 +12547,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
+  DeadAfterDetected: 1
   DetectedIconObject: {fileID: 1991280847150168979}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}
+  DamageAmount: 1
 --- !u!114 &2565714811592042155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12546,8 +12583,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
+  DeadAfterDetected: 1
   DetectedIconObject: {fileID: 2157492143739906993}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}
+  DamageAmount: 1
 --- !u!114 &2722919427109189257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12641,8 +12680,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
+  DeadAfterDetected: 1
   DetectedIconObject: {fileID: 2210940689836859103}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}
+  DamageAmount: 1
 --- !u!224 &2886000202002193695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15458,8 +15499,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
+  DeadAfterDetected: 1
   DetectedIconObject: {fileID: 4835872297750220720}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}
+  DamageAmount: 1
 --- !u!114 &8873581507416396424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15511,8 +15554,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
+  DeadAfterDetected: 1
   DetectedIconObject: {fileID: 4966234325624157566}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}
+  DamageAmount: 1
 --- !u!224 &9198317581017061245
 RectTransform:
   m_ObjectHideFlags: 0

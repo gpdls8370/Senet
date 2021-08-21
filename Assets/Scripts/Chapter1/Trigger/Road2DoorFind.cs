@@ -23,7 +23,7 @@ public class Road2DoorFind : InteractObject
             else
             {
                 Chapter1Manager.Instance.RockDoorFounded = true;
-                UIManager.Instance.Panel_Enable(UIManager.Instance.Road2_DoorFindPanel);
+                UIManager.Instance.Panel_Enable(Chapter1Manager.Instance.Road2_DoorFindPanel);
             }
         }
         else

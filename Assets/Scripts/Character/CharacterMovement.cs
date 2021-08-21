@@ -10,7 +10,6 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     public ParticleSystem FootSteps;
 
-
     [Header("Speed")]
     public float WalkSpeed;
     public float RunSpeed;
@@ -85,4 +84,5 @@ public class CharacterMovement : MonoBehaviour
         StateManager.Instance.SetMovementState(StateManager.MovementStates.Idle);
         FootSteps.Stop();
     }
+
 }

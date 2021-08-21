@@ -40,7 +40,7 @@ public class HideSkill : MonoBehaviour
             HideEnd();
         }
 
-        if (Chapter1Manager.Instance.HideSkillPopUp)
+        if (Chapter1Manager.Instance != null && Chapter1Manager.Instance.HideSkillPopUp)
         { 
             if (HideIconVisibleCount == 0)
             {

@@ -3,13 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : Singleton<UIManager>
 {
-    public GameObject Road2_EnterPanel;
-    public GameObject Road2_DoorFindPanel;
-    public GameObject Road2_RoomMoveTryPanel;
-    public GameObject Road4_EnterPanel;
-    public GameObject HideTextPanel;
-
     public SkillBox skillBox;
+    public LifeBox lifeBox;
 
     public void Panel_Enable(GameObject panel)
     {
