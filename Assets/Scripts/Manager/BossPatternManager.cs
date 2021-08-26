@@ -5,7 +5,7 @@ using System;
 
 public class BossPatternManager : Singleton<BossPatternManager>
 {
-    public enum PatternStates { TwoEye, ThreeKnife }
+    public enum PatternStates { TwoEye, ThreeKnife, Illusion, Bomb }
     public PatternStates nowPatternState;
 
     private bool PatternRunning = false;
@@ -38,7 +38,6 @@ public class BossPatternManager : Singleton<BossPatternManager>
             }
         }
     }
-
 
     protected override void Awake()
     {

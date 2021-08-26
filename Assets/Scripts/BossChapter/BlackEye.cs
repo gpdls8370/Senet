@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlackEye : HideDetect
 {
-    public float InvincibleDelay = 0.5f;
+    [SerializeField] private float InvincibleDelay = 0.5f;
 
     protected override void Start()
     {
@@ -18,8 +18,6 @@ public class BlackEye : HideDetect
 
         PlayerManager.Instance.LoseLife(1);
         StartCoroutine(HideInvincibleTime());
-
-        Debug.Log(PlayerManager.Instance.NowLife);
     }
 
     private IEnumerator HideInvincibleTime()

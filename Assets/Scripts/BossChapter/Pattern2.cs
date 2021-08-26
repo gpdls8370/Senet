@@ -7,11 +7,26 @@ public class Pattern2 : PatternBase
     [SerializeField] private GameObject[] KnifeList;
     [SerializeField] private float SpawnKnifeDelay = 1f;
 
-    private int StopKnifeCount = 0;
+    private bool KnifeSpawned;
 
     public override void StartPattern()
     {
         StartCoroutine(SpawnKnife());   
+    }
+
+    private void Update()
+    {
+        if (KnifeSpawned)
+        {
+            for (int i=0;i< KnifeList.Length; i++)
+            {
+                if (KnifeList[i].activeInHierarchy)
+                {
+                    return;
+                }
+            }
+            StopPattern();
+        }
     }
 
     private IEnumerator SpawnKnife()
@@ -28,22 +43,19 @@ public class Pattern2 : PatternBase
                 yield return new WaitForSeconds(SpawnKnifeDelay);           
             }
         }
+
+        KnifeSpawned = true;
     }
 
     public override void StopPattern()
     {
-        StopKnifeCount++;
-
-        if (StopKnifeCount >= 3)
-        {
-            BossPatternManager.Instance.StopPattern();
-            Reset();
-        }      
+        BossPatternManager.Instance.StopPattern();
+        Reset();
     }
 
     public override void Reset()
     {
-        StopKnifeCount = 0;
+        KnifeSpawned = false;
 
         for (int i = 0; i < KnifeList.Length; i++)
         {

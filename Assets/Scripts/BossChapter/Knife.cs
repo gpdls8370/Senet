@@ -16,14 +16,20 @@ public class Knife : MonoBehaviour
     private Vector3 direction;
     private Vector3 targetPos;
 
+    private bool Patroling = false;
+    private bool Attacking = false;
+
+    [Header("Illusion")]
+    [SerializeField] private bool illusion;
+    [SerializeField] private GameObject illusionPlayer;
+
+    [Header("Position")]
     public bool UseWaitingPos = false;
     public Transform waitingPos;
     
     private Quaternion targetRotation;
     private float LookSpeed = 500;
 
-    private bool Patroling = false;
-    private bool Attacking = false;
 
     private void Awake()
     {
@@ -53,7 +59,15 @@ public class Knife : MonoBehaviour
 
     private void DirectionPatrol()
     {
-        targetPos = playerTr.position;
+        if (illusion)
+        {
+            targetPos = illusionPlayer.transform.position;
+        }
+        else
+        {
+            targetPos = playerTr.position;
+        }
+
 
         if (UseWaitingPos)
         {
@@ -88,7 +102,7 @@ public class Knife : MonoBehaviour
         {
             Attacking = false;
 
-            if (knifeType == KnifeType.GrayKnife)
+            if (knifeType == KnifeType.GrayKnife && !illusion)
             {
                 if (!_characterMovement.isMoving)
                 {
@@ -97,7 +111,7 @@ public class Knife : MonoBehaviour
 
             }
 
-            if (knifeType == KnifeType.BlackKnife)
+            if (knifeType == KnifeType.BlackKnife && !illusion)
             {
                 if (_characterMovement.isMoving)
                 {
@@ -111,7 +125,6 @@ public class Knife : MonoBehaviour
 
     private void DeleteKnife()
     {
-        GetComponentInParent<Pattern2>().StopPattern();
         gameObject.SetActive(false);
     }
 

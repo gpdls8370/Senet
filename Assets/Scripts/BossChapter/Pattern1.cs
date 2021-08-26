@@ -5,7 +5,9 @@ using UnityEngine;
 public class Pattern1 : PatternBase
 {
     [Header("패턴1: 검은 눈 회색 눈")]
-    public float DamageStartDelay;
+    [SerializeField] private float DamageStartDelay;
+    [SerializeField] private float EndBlinkDelay;
+
     public GameObject BlackEye;
     public GameObject GrayEye;
 
@@ -33,9 +35,7 @@ public class Pattern1 : PatternBase
     public override void StopPattern()
     {
         base.StopPattern();
-
-        BlackEye.SetActive(false);
-        GrayEye.SetActive(false);
+        StartCoroutine(EndBlinkCoroutine());
     }
 
     private IEnumerator DamageStartDelayCoroutine()
@@ -45,5 +45,20 @@ public class Pattern1 : PatternBase
         yield return new WaitForSeconds(DamageStartDelay);
 
         PlayerManager.Instance.isInvincibleInHide = false;
+    }
+
+    private IEnumerator EndBlinkCoroutine()
+    {
+        BlackEye.GetComponentInChildren<Animator>().SetTrigger("BlinkEye");
+        GrayEye.GetComponentInChildren<Animator>().SetTrigger("BlinkEye");
+
+        BossStateManager.Instance.Boss.GetComponent<BossMovement>().PatrolStop();
+
+        yield return new WaitForSeconds(EndBlinkDelay);
+
+        BlackEye.SetActive(false);
+        GrayEye.SetActive(false);
+
+        BossStateManager.Instance.Boss.GetComponent<BossMovement>().PatrolStart();
     }
 }
