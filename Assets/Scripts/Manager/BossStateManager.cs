@@ -7,16 +7,13 @@ public class BossStateManager : Singleton<BossStateManager>
     public enum MovementStates { Idle, Walk }
     public MovementStates nowMovementState;
 
-
     public GameObject Boss;
     private Animator animator;
-    private BossMovement bossMovement;
 
     protected override void Awake()
     {
         base.Awake();
         animator = Boss.GetComponentInChildren<Animator>();
-        bossMovement = Boss.GetComponent<BossMovement>();
     }
 
     public void SetMovementState(MovementStates state)
@@ -24,7 +21,6 @@ public class BossStateManager : Singleton<BossStateManager>
         nowMovementState = state;
         UpdateAnimator();
     }
-
 
     private void UpdateAnimator()
     {

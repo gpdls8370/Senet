@@ -19,6 +19,9 @@ public class SideEye : MonoBehaviour
     [SerializeField] private bool illusion;
     [SerializeField] private GameObject illusionPlayer;
 
+    [Header("BlackEye")]
+    [SerializeField] private GameObject HideZone;
+
     [Header("GrayEye")]
     [SerializeField] private GameObject EyeZone;
 
@@ -30,7 +33,7 @@ public class SideEye : MonoBehaviour
     {
         if (eyeState == EyeStates.BlackEye && !illusion)
         {
-            GetComponentInChildren<HideZone>().MustHideDelay = EyeOpenDelay;
+            HideZone.GetComponent<HideZone>().MustHideDelay = EyeOpenDelay;
         }
     }
 
@@ -70,16 +73,43 @@ public class SideEye : MonoBehaviour
     {
         yield return new WaitForSeconds(EyeOpenDelay);
 
-        animator.SetTrigger("OpenEye");
         isPatroling = false;
 
         if (eyeState == EyeStates.GrayEye)
         {
             EyeZone.SetActive(false);
+            if (illusion)
+            {
+                animator.SetTrigger("OpenEye");
+            }
+            else
+            {
+                GetComponent<GrayEye>().StartAttack();
+            }
         }
+
+        else if(eyeState == EyeStates.BlackEye)
+        {
+            if (illusion)
+            {
+                animator.SetTrigger("OpenEye");
+                Invoke("HideZoneOn", 0.5f);
+            }
+            else
+            {
+                GetComponent<BlackEye>().StartAttack();
+            }
+        }
+
+        //레드도
 
         yield return new WaitForSeconds(EndDelayAfterEyeOpen);
 
         gameObject.SetActive(false);
+    }
+
+    private void HideZoneOn()
+    {
+        HideZone.SetActive(true);
     }
 }

@@ -14,6 +14,11 @@ public class Pattern3 : PatternBase
 
     private int[] RandomPattern;
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
     private void Start()
     {
         RandomPattern = new int[3];
@@ -21,11 +26,14 @@ public class Pattern3 : PatternBase
 
     public override void StartPattern()
     {
+        SwitchStretch();
         StartCoroutine(SpawnIllusion());
     }
 
     private IEnumerator SpawnIllusion()
     {
+        yield return new WaitForSeconds(1f);    //올라가는 모션 기다리기
+
         IllusionCharacter.SetActive(true);
 
         yield return new WaitForSeconds(IllusionAttackDelay);
@@ -70,15 +78,18 @@ public class Pattern3 : PatternBase
     {
         for (int i = 0; i < 3;)
         {
-            PlayerPatterns[RandomPattern[i]].SetActive(true);
-            i++;
+            if (!PlayerPatterns[RandomPattern[i]].activeInHierarchy)
+            {
+                PlayerPatterns[RandomPattern[i]].SetActive(true);
+                i++;
+            }
         }
     }
 
     public override void StopPattern()
     {
         base.StopPattern();
-
+        SwitchIdle();
     }
 
     public override void Reset()

@@ -12,7 +12,6 @@ public class StateManager : Singleton<StateManager>
     public GameObject Player;
     private Animator animator;
 
-
     protected override void Awake()
     {
         base.Awake();

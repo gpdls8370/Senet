@@ -11,10 +11,11 @@ public class Pattern2 : PatternBase
 
     public override void StartPattern()
     {
-        StartCoroutine(SpawnKnife());   
+        SwitchThrow();
+        StartCoroutine(SpawnKnife());  
     }
 
-    private void Update()
+    protected override void Update()
     {
         if (KnifeSpawned)
         {
@@ -31,6 +32,8 @@ public class Pattern2 : PatternBase
 
     private IEnumerator SpawnKnife()
     {
+        yield return new WaitForSeconds(1f);    //칼 던지는 모션 기다리기
+
         for (int i = 0; i < 3;)
         {
             int r = Random.Range(0, 10);
@@ -50,6 +53,7 @@ public class Pattern2 : PatternBase
     public override void StopPattern()
     {
         BossPatternManager.Instance.StopPattern();
+        SwitchIdle();
         Reset();
     }
 

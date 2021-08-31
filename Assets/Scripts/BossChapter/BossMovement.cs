@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 public class BossMovement : MonoBehaviour
 {
-    [Header("Speed")]
+    
+    [Header("Patrol")]
+    [SerializeField] private bool UsePatrol;
     public float WalkSpeed;
-
+    
     private bool isPatroling;
 
     private Transform playerTr;
@@ -29,7 +31,7 @@ public class BossMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isPatroling)
+        if (isPatroling && UsePatrol)
         {
             nvAgent.SetDestination(playerTr.position);
             if (nvAgent.remainingDistance >= nvAgent.stoppingDistance)
@@ -54,6 +56,7 @@ public class BossMovement : MonoBehaviour
     {
         isPatroling = false;
         nvAgent.isStopped = true;
+        FootSteps.Stop();
     }
 
     private void WalkStart()

@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: bfed44b4695010549be96ed6108d8e5a
+guid: 0e79f17a400f0dc4dbba33fce35f8340
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2424553518018739129
-    second: boss_0
+      213: 8579414383572694486
+    second: BossStretch_0
   - first:
-      213: -3588229512158965765
-    second: boss_1
+      213: -893913795780026728
+    second: BossStretch_1
   - first:
-      213: -6963195877183015321
-    second: boss_2
+      213: -5896458186228233818
+    second: BossStretch_2
   - first:
-      213: 7801903984715115176
-    second: boss_3
+      213: 3893947041100466001
+    second: BossStretch_3
   - first:
-      213: -5888845342232556802
-    second: boss_4
+      213: -5577193646158771978
+    second: BossStretch_4
   - first:
-      213: -7366506907712603825
-    second: boss_5
+      213: 5936927525375285768
+    second: BossStretch_5
   - first:
-      213: 5981802871748074552
-    second: boss_6
+      213: 6016433446421713446
+    second: BossStretch_6
   - first:
-      213: -8797041637764437337
-    second: boss_7
+      213: 7958521605912739689
+    second: BossStretch_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -135,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_0
+      name: BossStretch_0
       rect:
         serializedVersion: 2
         x: 35
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 744c193db614a5ed0800000000000000
-      internalID: -2424553518018739129
+      spriteID: 6d53ab91de3301770800000000000000
+      internalID: 8579414383572694486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_1
+      name: BossStretch_1
       rect:
         serializedVersion: 2
         x: 266
@@ -170,14 +170,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bff013b154c043ec0800000000000000
-      internalID: -3588229512158965765
+      spriteID: 89ed5be832e2893f0800000000000000
+      internalID: -893913795780026728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_2
+      name: BossStretch_2
       rect:
         serializedVersion: 2
         x: 482
@@ -191,14 +191,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 766ba070e32cd5f90800000000000000
-      internalID: -6963195877183015321
+      spriteID: 6a90ce835829b2ea0800000000000000
+      internalID: -5896458186228233818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_3
+      name: BossStretch_3
       rect:
         serializedVersion: 2
         x: 698
@@ -212,14 +212,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aa26ac765ee54c60800000000000000
-      internalID: 7801903984715115176
+      spriteID: 1570afee3341a0630800000000000000
+      internalID: 3893947041100466001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_4
+      name: BossStretch_4
       rect:
         serializedVersion: 2
         x: 929
@@ -233,14 +233,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efac3079c5e964ea0800000000000000
-      internalID: -5888845342232556802
+      spriteID: 6f804259de3d992b0800000000000000
+      internalID: -5577193646158771978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_5
+      name: BossStretch_5
       rect:
         serializedVersion: 2
         x: 1152
@@ -254,14 +254,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4934523ff8e4c990800000000000000
-      internalID: -7366506907712603825
+      spriteID: 80a9b3f0124346250800000000000000
+      internalID: 5936927525375285768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_6
+      name: BossStretch_6
       rect:
         serializedVersion: 2
         x: 1373
@@ -275,14 +275,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83c94f6d402a30350800000000000000
-      internalID: 5981802871748074552
+      spriteID: 622deb4d75aae7350800000000000000
+      internalID: 6016433446421713446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_7
+      name: BossStretch_7
       rect:
         serializedVersion: 2
         x: 1595
@@ -296,8 +296,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aaeaba3d31aae580800000000000000
-      internalID: -8797041637764437337
+      spriteID: 96f33b90c39527e60800000000000000
+      internalID: 7958521605912739689
       vertices: []
       indices: 
       edges: []

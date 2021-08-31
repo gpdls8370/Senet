@@ -5,7 +5,7 @@ using System;
 
 public class BossPatternManager : Singleton<BossPatternManager>
 {
-    public enum PatternStates { TwoEye, ThreeKnife, Illusion, Bomb }
+    public enum PatternStates { TwoEye, ThreeKnife, Illusion, Bomb, ThreeEye }
     public PatternStates nowPatternState;
 
     private bool PatternRunning = false;

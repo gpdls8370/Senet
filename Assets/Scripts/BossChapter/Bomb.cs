@@ -4,53 +4,51 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField] private float BombDealyAfterFall;
+    public float BombFallingDealy;
+    [SerializeField] private float InvincibleTime;
     [SerializeField] private bool Illusion;
 
-    private bool PlayerOn;
+    private bool isEnable;
+    private bool isInvincible;
 
     private void OnEnable()
     {
+        isEnable = true;
+        isInvincible = false;
         StartCoroutine(BombTimeCoroutine());
-        //떨어지는 애니메이션
     }
 
     private IEnumerator BombTimeCoroutine()
     {
-        yield return new WaitForSeconds(BombDealyAfterFall);
-
-        //터지는 애니메이션
-
-        if (!Illusion && PlayerOn)
-        {
-            PlayerManager.Instance.LoseLife(1);
-        }
-
-        //터진 후 딜레이 필요하면 넣기
+        yield return new WaitForSeconds(BombFallingDealy);
 
         gameObject.SetActive(false);
-
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private IEnumerator InvincibleCoroutine()
+    {
+        isInvincible = true;
+
+        yield return new WaitForSeconds(InvincibleTime);
+
+        isInvincible = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
-            PlayerOn = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.tag == "Player")
-        {
-            PlayerOn = false;
+           if (!Illusion && isEnable && !isInvincible)
+            {
+                PlayerManager.Instance.LoseLife(1);
+                StartCoroutine(InvincibleCoroutine());
+            }
         }
     }
 
     private void OnDisable()
     {
-        PlayerOn = false;
+        isEnable = false;
     }
 
 }

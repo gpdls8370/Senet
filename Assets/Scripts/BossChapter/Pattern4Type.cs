@@ -1,56 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class BombArray
+{
+    public GameObject[] Bombs;
+}
+
 public class Pattern4Type : MonoBehaviour
 {
-    [SerializeField] private GameObject[] FirstShowObject;
-    [SerializeField] private GameObject[] SecondShowObject;
-    [SerializeField] private GameObject[] ThirdShowObject;
     [SerializeField] private float ShowDelayTime;
+    [SerializeField] private BombArray[] BombList;
 
     public void TypeActionStart()
     {
         StartCoroutine(TypeCoroutine());
     }
 
-    public void TypeActionEnd()
-    {
-        foreach (GameObject bomb in FirstShowObject)
+    private IEnumerator TypeCoroutine()
+    {    
+        for (int i = 0; i < BombList.Length; i++)
         {
-            bomb.SetActive(false);
-        }
-
-        foreach (GameObject bomb in SecondShowObject)
-        {
-            bomb.SetActive(false);
-        }
-
-        foreach (GameObject bomb in ThirdShowObject)
-        {
-            bomb.SetActive(false);
+            foreach (GameObject bomb in BombList[i].Bombs)
+            {
+                bomb.SetActive(true);
+            }
+            yield return new WaitForSeconds(ShowDelayTime);
         }
     }
 
-    private IEnumerator TypeCoroutine()
+    public float GetShowTime()
     {
-        foreach (GameObject bomb in FirstShowObject)
-        {
-            bomb.SetActive(true);
-        }
-
-        yield return new WaitForSeconds(ShowDelayTime);
-
-        foreach (GameObject bomb in SecondShowObject)
-        {
-            bomb.SetActive(true);
-        }
-
-        yield return new WaitForSeconds(ShowDelayTime);
-
-        foreach (GameObject bomb in ThirdShowObject)
-        {
-            bomb.SetActive(true);
-        }
+        return BombList.Length * ShowDelayTime;
     }
 }
