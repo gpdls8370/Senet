@@ -16,7 +16,7 @@ public class Road2CannotGoRoom : MonoBehaviour
             if (!Chapter1Manager.Instance.RockDoorFounded)
             {
                 _teleport.CanTeleport = false;
-                UIManager.Instance.Panel_Enable(UIManager.Instance.Road2_RoomMoveTryPanel);
+                UIManager.Instance.Panel_Enable(Chapter1Manager.Instance.Road2_RoomMoveTryPanel);
             }
             else
             {

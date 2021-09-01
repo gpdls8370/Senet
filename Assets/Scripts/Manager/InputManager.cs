@@ -19,6 +19,7 @@ public class InputManager : Singleton<InputManager>
 
     [Header("Skill")]
     public KeyCode Hide;
-    public KeyCode StopTime;
+    public KeyCode TimeBackSave;
+    public KeyCode TimeBack;
 
 }
