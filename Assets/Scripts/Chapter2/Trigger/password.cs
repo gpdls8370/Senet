@@ -15,7 +15,7 @@ public class password : MonoBehaviour
     {
         /*for (int i = 0; i < 4; i++)
         {
-            if (m_InputField[i] != answer[i])
+            /*if (m_InputField[i] != answer[i])
             {
                 password2f = false;
                 cn++;

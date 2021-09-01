@@ -6,6 +6,8 @@ public class CharacterDash : MonoBehaviour
 {
     private KeyCode dashKey;
 
+    public AudioClip clip;
+
     private CharacterMovement _characterMovement;
     private Rigidbody2D rb;
 
@@ -36,6 +38,7 @@ public class CharacterDash : MonoBehaviour
     {
         if (Input.GetKeyDown(dashKey) && cooldownReady)
         {
+            SoundManager.instance.SFXPlay("dash", clip);
             DashStart();
         }
 

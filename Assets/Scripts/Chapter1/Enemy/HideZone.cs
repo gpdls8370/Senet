@@ -45,7 +45,7 @@ public class HideZone : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            if (!_hideDetect.isDetected)
+            if (!_hideDetect.isDetected && !PlayerManager.Instance.isInvincibleInHide)
             {
                 if (PlayerManager.Instance != null)
                 {

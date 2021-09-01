@@ -7,6 +7,8 @@ public class TimeBackSkill : MonoBehaviour
     private KeyCode TimeBackSaveKey;
     private KeyCode TimeBackKey;
 
+    public AudioClip clip;  
+
     [SerializeField] private float Cooltime;
     [SerializeField] private SpriteRenderer SavePosIcon;
     [SerializeField] private Animator BackEffect;
@@ -42,6 +44,8 @@ public class TimeBackSkill : MonoBehaviour
 
             SavePosIcon.transform.position = savePos;
             SavePosIcon.gameObject.SetActive(true);
+
+            
             
             if (_characterMovement.moveDirection.y < - 0.99)
             {
@@ -63,6 +67,8 @@ public class TimeBackSkill : MonoBehaviour
 
         if (Input.GetKeyDown(TimeBackKey) && CanTimeBack && Saved)
         {
+            SoundManager.instance.SFXPlay("return", clip);
+
             Saved = false;
             transform.position = savePos;
             StartCoroutine(CooltimeCoroutine());
