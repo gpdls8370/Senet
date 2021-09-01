@@ -14,8 +14,12 @@ public class HideZone : MonoBehaviour
     private void Awake()
     {
         _hideSkill = StateManager.Instance.Player.GetComponent<HideSkill>();
-        _hideDetect = TargetEnemy.GetComponent<HideDetect>();
-        _sleepCycle = TargetEnemy.GetComponent<SleepCycle>();
+
+        if (TargetEnemy != null)
+        {
+            _hideDetect = TargetEnemy.GetComponent<HideDetect>();
+            _sleepCycle = TargetEnemy.GetComponent<SleepCycle>();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)

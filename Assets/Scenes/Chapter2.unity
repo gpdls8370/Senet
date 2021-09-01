@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowMovementState: 0
   nowSkillState: 0
-  Player: {fileID: 0}
+  Player: {fileID: 1549961601}
 --- !u!1 &488375149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,12 +1219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8648ab5a51b030479968798f744e8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
-  HaveKey: 0
-  RockDoorFounded: 0
-  HideSkillPopUp: 0
-  RedLight: {fileID: 0}
-  YellowLight: {fileID: 0}
 --- !u!1001 &581510028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1240,7 +1234,7 @@ PrefabInstance:
     - target: {fileID: 766885869923050298, guid: 93b50731f1ddc224a80a3269d1ecee24,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139765985091431121, guid: 93b50731f1ddc224a80a3269d1ecee24,
         type: 3}
@@ -1987,7 +1981,8 @@ MonoBehaviour:
   Dash: 97
   Interaction: 32
   Hide: 120
-  StopTime: 118
+  TimeBackSave: 0
+  TimeBack: 0
 --- !u!1 &1291138181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,6 +2273,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1549961601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8711335342463673246, guid: 6152c051ecdba144ab2de37764662a4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1771255453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1560176177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,12 +2873,12 @@ PrefabInstance:
     - target: {fileID: 8711335341343888482, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.49
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8711335341343888482, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8711335342463673241, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
@@ -2887,12 +2888,12 @@ PrefabInstance:
     - target: {fileID: 8711335342463673241, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8711335342463673241, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.3
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8711335342463673241, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
