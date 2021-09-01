@@ -7,7 +7,7 @@ public class Cctv : MonoBehaviour
     public GameObject toObj;
     public Transform CameraMoveTo;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         
         if (collision.CompareTag("Player"))
@@ -28,5 +28,5 @@ public class Cctv : MonoBehaviour
     public void cctvoff()
     {
         invoke("cctvon", 1.0f);
-    }
+    }*/
 }

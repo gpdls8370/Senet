@@ -9,7 +9,7 @@ public class HideGuide : MonoBehaviour
         if (col.tag == "Player" && !Chapter1Manager.Instance.HideSkillPopUp)
         {
             Chapter1Manager.Instance.HideSkillPopUp = true;
-            UIManager.Instance.Panel_Enable(UIManager.Instance.HideTextPanel); 
+            UIManager.Instance.Panel_Enable(Chapter1Manager.Instance.HideTextPanel); 
         }
     }
 }

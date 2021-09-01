@@ -9,7 +9,7 @@ public class Road4Enter : MonoBehaviour
         if (col.tag == "Player" && !Entered)
         {
             Entered = true;
-            UIManager.Instance.Panel_Enable(UIManager.Instance.Road4_EnterPanel);
+            UIManager.Instance.Panel_Enable(Chapter1Manager.Instance.Road4_EnterPanel);
         }
     }
 }

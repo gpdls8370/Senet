@@ -10,13 +10,16 @@ public class HideZone : MonoBehaviour
 
     private bool mustHide = false;
     public float MustHideDelay = 0.5f;
-    
 
     private void Awake()
     {
         _hideSkill = StateManager.Instance.Player.GetComponent<HideSkill>();
-        _hideDetect = TargetEnemy.GetComponent<HideDetect>();
-        _sleepCycle = TargetEnemy.GetComponent<SleepCycle>();
+
+        if (TargetEnemy != null)
+        {
+            _hideDetect = TargetEnemy.GetComponent<HideDetect>();
+            _sleepCycle = TargetEnemy.GetComponent<SleepCycle>();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -28,7 +31,11 @@ public class HideZone : MonoBehaviour
                 _hideSkill.CanHide = true;
             }
 
-            _hideDetect.DetectedIconObject.SetActive(true);
+            if (_hideDetect.DetectedIconObject != null)
+            {
+                _hideDetect.DetectedIconObject.SetActive(true);
+            }
+
             _hideSkill.HideZoneCount++;
             StartCoroutine(HideTimeCountCoroutine());
         }
@@ -38,7 +45,7 @@ public class HideZone : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            if (!_hideDetect.isDetected)
+            if (!_hideDetect.isDetected && !PlayerManager.Instance.isInvincibleInHide)
             {
                 if (_sleepCycle != null) 
                 {
@@ -63,7 +70,10 @@ public class HideZone : MonoBehaviour
             _hideSkill.CanHide = false;
             UIManager.Instance.skillBox.HideIconUnable();
             mustHide = false;
-            _hideDetect.DetectedIconObject.SetActive(false);
+            if (_hideDetect.DetectedIconObject != null)
+            {
+                _hideDetect.DetectedIconObject.SetActive(false);
+            }
             _hideSkill.HideZoneCount--;
             StopAllCoroutines();
         }

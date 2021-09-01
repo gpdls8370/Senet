@@ -12,7 +12,6 @@ public class StateManager : Singleton<StateManager>
     public GameObject Player;
     private Animator animator;
 
-
     protected override void Awake()
     {
         base.Awake();
@@ -47,7 +46,8 @@ public class StateManager : Singleton<StateManager>
     public void SetDead()
     {
         nowMovementState = MovementStates.Dead;
-        animator.SetBool("Dead", nowMovementState == MovementStates.Dead);  
+        animator.SetBool("Dead", nowMovementState == MovementStates.Dead);
+        UIManager.Instance.Panel_Enable(UIManager.Instance.GameoverPanel);
     }
 
     public void Pause()
@@ -63,6 +63,12 @@ public class StateManager : Singleton<StateManager>
     public void PlayerPause()
     {
         Player.GetComponent<CharacterMovement>().enabled = false;
+        SetMovementState(MovementStates.Idle);
+    }
+
+    public void PlayerResume()
+    {
+        Player.GetComponent<CharacterMovement>().enabled = true;
     }
 
     public bool isWalking() { return nowMovementState == MovementStates.Walk; }
