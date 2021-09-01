@@ -10,6 +10,7 @@ public class ChatSystem : MonoBehaviour
     public TextMeshPro text;
     public GameObject quad;
     public bool PauseAfterChat = false;
+    public bool DeadAfterChat = false;
 
     public void OnDialogue(string[] lines, Transform chatPoint, float nextDelay)
     {
@@ -25,7 +26,6 @@ public class ChatSystem : MonoBehaviour
 
     IEnumerator DialogueFlow(float nextDelay)
     {
-
         while (sentences.Count > 0)
         {
             currentSentence = sentences.Dequeue();
@@ -40,6 +40,11 @@ public class ChatSystem : MonoBehaviour
         if (PauseAfterChat)
         {
             StateManager.Instance.Pause();
+        }
+
+        if (DeadAfterChat)
+        {
+            StateManager.Instance.SetDead();
         }
     }
 }
