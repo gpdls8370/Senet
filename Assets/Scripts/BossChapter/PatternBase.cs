@@ -16,7 +16,7 @@ public class PatternBase : MonoBehaviour
         {
             if (goTime < 2)
             {
-                newPosition = Vector2.Lerp(BossAnimator.transform.position, new Vector2(0, 4), goTime / 2) ;
+                newPosition = Vector2.Lerp(BossAnimator.transform.position, new Vector2(0, 3), goTime / 2) ;
                 goTime += Time.deltaTime;
                 BossAnimator.transform.position = newPosition;
             }

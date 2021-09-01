@@ -5,10 +5,11 @@ using UnityEngine;
 public class GrayEye : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private float OpeningTime;
+    [SerializeField] private float OpeningDuration;
 
     [SerializeField] bool UseAutoUnActive;
     [SerializeField] private float CloseDelay;
+    [SerializeField] private GameObject GrayZone;
 
     public void StartAttack()
     {
@@ -18,14 +19,14 @@ public class GrayEye : MonoBehaviour
 
     private IEnumerator OpeningCoroutine()
     {
-        yield return new WaitForSeconds(OpeningTime);
+        yield return new WaitForSeconds(OpeningDuration);
 
         animator.SetTrigger("CloseEye");
 
         if (UseAutoUnActive)
         {
             yield return new WaitForSeconds(CloseDelay);
-            gameObject.SetActive(false);
+            GrayZone.SetActive(false);
         }
     }
 }

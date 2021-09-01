@@ -11,11 +11,13 @@ public class Pattern5 : PatternBase
     [SerializeField] private float Red_BlackGap;
     [SerializeField] private float Black_GrayGap;
     [SerializeField] private float RedBlackStartDelay;
+    [SerializeField] private float RedBlackEndDelay;
+    [SerializeField] private float GrayStartDelay;
+    [SerializeField] private float PatternEndDelay;
 
     public override void StartPattern()
     {
         SwitchStretch();
-        transform.position = PlayerManager.Instance.Player.transform.position;
         StartCoroutine(PatternCoroutine());
     }
 
@@ -35,6 +37,23 @@ public class Pattern5 : PatternBase
 
         yield return new WaitForSeconds(RedBlackStartDelay);
 
+        BlackEye.GetComponent<BlackEye>().StartAttack();
+        RedEye.GetComponent<RedEye>().StartAttack();
+
+        yield return new WaitForSeconds(RedBlackEndDelay);
+
+        BlackEye.GetComponent<BlackEye>().StopAttack();
+        RedEye.GetComponent<RedEye>().StopAttack();
+
+        yield return new WaitForSeconds(GrayStartDelay);
+
+        GrayEye.GetComponent<GrayEye>().StartAttack();
+
+        //GrayEye는 자체적으로 눈 감음
+
+        yield return new WaitForSeconds(PatternEndDelay);
+
+        StopPattern();
     }
 
     public override void StopPattern()

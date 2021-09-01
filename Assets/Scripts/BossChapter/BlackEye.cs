@@ -5,6 +5,8 @@ using UnityEngine;
 public class BlackEye : HideDetect
 {
     [SerializeField] private float InvincibleDelay = 0.5f;
+ 
+    [Header("BlackEye")]
     [SerializeField] private GameObject HideZone;
     [SerializeField] private Animator animator;
 
@@ -23,6 +25,17 @@ public class BlackEye : HideDetect
     private void HideZoneOn()
     {
         HideZone.SetActive(true);
+    }
+
+    public void StopAttack()
+    {
+        animator.SetTrigger("CloseEye");
+        Invoke("HideZoneOff", 0.5f);
+    }
+
+    private void HideZoneOff()
+    {
+        HideZone.SetActive(false);
     }
 
     public override void Detected()

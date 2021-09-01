@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class SkillBox : MonoBehaviour
 {
     public GameObject HideIcon;
+
+    public Image HideIconImage;
+    public Image DashIconImage;
+    public Image TimebackIconImage;
+
     public float BoxUnableAlpha = 0.3f;
 
     public void HideIconEnable()

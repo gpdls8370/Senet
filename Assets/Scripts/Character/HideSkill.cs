@@ -7,12 +7,14 @@ public class HideSkill : MonoBehaviour
     private CharacterMovement _characterMovement;
     private SpriteRenderer _spriteRenderer;
 
-    public float HideSpeed;
-    public float HideAlpha = 0.5f;
+    [SerializeField] private float HideAlpha = 0.5f;
+    private float HideSpeed;
 
     [HideInInspector]
     public bool CanHide = false;
+    [HideInInspector]
     public int HideZoneCount = 0;
+    
     private int HideIconVisibleCount = 0;
 
     private void Awake()
@@ -56,8 +58,7 @@ public class HideSkill : MonoBehaviour
             {
                 UIManager.Instance.skillBox.HideIconUnable();
             }
-        }
-        
+        } 
     }
 
     private void HideStart()

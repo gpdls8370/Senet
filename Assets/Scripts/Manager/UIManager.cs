@@ -3,8 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : Singleton<UIManager>
 {
+    [Header("UI")]
     public SkillBox skillBox;
-    public LifeBox lifeBox;
+    public GameObject GameoverPanel;
 
     public void Panel_Enable(GameObject panel)
     {
@@ -28,9 +29,18 @@ public class UIManager : Singleton<UIManager>
         StateManager.Instance.Resume();
     }   
 
+    public void MoveScene(string SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
     public void RestartScene()
     {
-        //테스트 빌드 버전에서 사용
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

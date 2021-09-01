@@ -14,7 +14,6 @@ public class PlayerManager : Singleton<PlayerManager>
     protected override void Awake()
     {
         base.Awake();
-        
     }
 
     private void Start()
@@ -25,20 +24,17 @@ public class PlayerManager : Singleton<PlayerManager>
     public void LoseLife(int damage)
     {
         NowLife -= damage;
-        UIManager.Instance.lifeBox.LoseLife(damage);
+        BossChapterManager.Instance.lifeBox.LoseLife(damage);
         
         if (NowLife <= 0)
         {
-            Dead();
+            StateManager.Instance.PlayerPause();
+            Invoke("Dead", 1f);
         }
-    
     }
 
     private void Dead()
     {
         StateManager.Instance.SetDead();
-        StateManager.Instance.PlayerPause();
     }
-
-
 }

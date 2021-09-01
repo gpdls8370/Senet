@@ -23,9 +23,11 @@ public class LifeBox : MonoBehaviour
     {
         for (int i = 0; i < damage; i++)
         {
-            Lifes[nowActiveLife - 1 - damage].SetActive(false);
+            if (nowActiveLife - 1 - i >= 0)
+            {
+                Lifes[nowActiveLife - 1 - i].SetActive(false);
+            }
         }
-
         nowActiveLife -= damage;
     }
 

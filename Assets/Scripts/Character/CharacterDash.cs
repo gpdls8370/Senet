@@ -14,11 +14,12 @@ public class CharacterDash : MonoBehaviour
     private float dashTime;
     private Vector2 dashDestination;
     private Vector2 newPosition;
+    private float CooltimeCounter;
 
     [Header("Dash")]
     public float DashDuration;
     public float DashDistance;
-    public float DashCoolTime;
+    public float DashCooltime;
 
     [Header("Cannot Move Layer")]
     public String CannotMoveLayer;
@@ -51,6 +52,16 @@ public class CharacterDash : MonoBehaviour
                 isDashing = false;
             }
         }
+
+        if (CooltimeCounter >= 0)
+        {
+            CooltimeCounter -= Time.deltaTime;
+
+            if (UIManager.Instance.skillBox.DashIconImage != null)
+            {
+                UIManager.Instance.skillBox.DashIconImage.fillAmount = 1 - CooltimeCounter / DashCooltime;
+            }
+        }
     }
 
     private void DashStart()
@@ -64,7 +75,10 @@ public class CharacterDash : MonoBehaviour
     IEnumerator CoolDown()
     {
         cooldownReady = false;
-        yield return new WaitForSeconds(DashCoolTime);
+        CooltimeCounter = DashCooltime;
+
+        yield return new WaitForSeconds(DashCooltime);
+
         cooldownReady = true;
     }
 

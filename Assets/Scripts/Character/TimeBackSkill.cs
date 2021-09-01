@@ -7,9 +7,9 @@ public class TimeBackSkill : MonoBehaviour
     private KeyCode TimeBackSaveKey;
     private KeyCode TimeBackKey;
 
-    [SerializeField] private float SkillCooltime;
+    [SerializeField] private float Cooltime;
     [SerializeField] private SpriteRenderer SavePosIcon;
-    [SerializeField] private ParticleSystem BackEffect;
+    [SerializeField] private Animator BackEffect;
 
     [Header("Player Image")]
     [SerializeField] private Sprite Front;
@@ -21,6 +21,7 @@ public class TimeBackSkill : MonoBehaviour
     private bool CanTimeBack;
     private Vector3 savePos;
     private CharacterMovement _characterMovement;
+    private float CooltimeCounter;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class TimeBackSkill : MonoBehaviour
         TimeBackSaveKey = InputManager.Instance.TimeBackSave;
         CanTimeBack = true;
         Saved = false;
+        CooltimeCounter = 0f;
     }
 
     private void Update()
@@ -67,16 +69,27 @@ public class TimeBackSkill : MonoBehaviour
 
             SavePosIcon.gameObject.SetActive(false);
 
-            BackEffect.transform.position = savePos;
+            BackEffect.transform.position = new Vector3(savePos.x, savePos.y - 2, savePos.z);
             StartCoroutine(EffectCoroutine());
+        }
+
+        if (CooltimeCounter >= 0)
+        {
+            CooltimeCounter -= Time.deltaTime;
+
+            if (UIManager.Instance.skillBox.TimebackIconImage != null)
+            {
+                UIManager.Instance.skillBox.TimebackIconImage.fillAmount = 1 - CooltimeCounter / Cooltime;
+            }
         }
     }
 
     private IEnumerator CooltimeCoroutine()
     {
         CanTimeBack = false;
+        CooltimeCounter = Cooltime;
 
-        yield return new WaitForSeconds(SkillCooltime);
+        yield return new WaitForSeconds(Cooltime);
 
         CanTimeBack = true;
     }
@@ -84,11 +97,13 @@ public class TimeBackSkill : MonoBehaviour
     private IEnumerator EffectCoroutine()
     {
         BackEffect.gameObject.SetActive(true);
-        BackEffect.Play();
+        BackEffect.SetTrigger("Active");
+        StateManager.Instance.PlayerPause();
 
         yield return new WaitForSeconds(0.3f);
+        StateManager.Instance.PlayerResume();
 
-        BackEffect.Stop();
+        yield return new WaitForSeconds(0.4f);
         BackEffect.gameObject.SetActive(false);
     }
 }
