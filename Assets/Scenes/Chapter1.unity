@@ -5350,7 +5350,24 @@ Transform:
   m_Father: {fileID: 3453002981599692207}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1041367893
+--- !u!1 &1041367895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041367892}
+  - component: {fileID: 1041367896}
+  m_Layer: 0
+  m_Name: Chapter1Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1041367896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5359,7 +5376,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1041367895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8648ab5a51b030479968798f744e8eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 61c922c59050bba469a02df395196a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 1174699191}
@@ -5373,23 +5390,6 @@ MonoBehaviour:
   Road2_RoomMoveTryPanel: {fileID: 1519217928}
   Road4_EnterPanel: {fileID: 90311277}
   HideTextPanel: {fileID: 1726474490}
---- !u!1 &1041367895
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1041367892}
-  - component: {fileID: 1041367893}
-  m_Layer: 0
-  m_Name: Chapter1Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &1056472449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5447941410196294682, guid: 87703fc548a89e945bde2f949ad19f2f,
@@ -11709,7 +11709,7 @@ SortingGroup:
   m_GameObject: {fileID: 4441013241770495816}
   m_Enabled: 1
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!222 &266880659197489455
 CanvasRenderer:
@@ -11736,7 +11736,7 @@ SortingGroup:
   m_GameObject: {fileID: 4203624227916051846}
   m_Enabled: 1
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!224 &350029279010132286
 RectTransform:
@@ -11919,7 +11919,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!4 &723617501940213566
 Transform:
@@ -12002,7 +12002,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!114 &1100087389681322182
 MonoBehaviour:
@@ -13292,7 +13292,8 @@ MonoBehaviour:
   Dash: 97
   Interaction: 32
   Hide: 120
-  StopTime: 118
+  TimeBackSave: 0
+  TimeBack: 0
 --- !u!4 &3453002981644559486
 Transform:
   m_ObjectHideFlags: 0
@@ -13962,7 +13963,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!4 &5985748082008734193
 Transform:
@@ -14015,7 +14016,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!4 &6143797092258654675
 Transform:
@@ -14068,7 +14069,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!114 &6339450884660329701
 MonoBehaviour:
@@ -14330,7 +14331,7 @@ SortingGroup:
   m_GameObject: {fileID: 7286733321724771179}
   m_Enabled: 1
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!222 &6726316381920204078
 CanvasRenderer:
@@ -14349,7 +14350,7 @@ SortingGroup:
   m_GameObject: {fileID: 7155425499749329737}
   m_Enabled: 1
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!222 &6775252669603799104
 CanvasRenderer:
@@ -14387,7 +14388,7 @@ SortingGroup:
   m_GameObject: {fileID: 6922886878499331623}
   m_Enabled: 1
   m_SortingLayerID: -1089483091
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!114 &6895512906723817446
 MonoBehaviour:
