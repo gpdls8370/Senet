@@ -1522,7 +1522,6 @@ GameObject:
   - component: {fileID: 1965681717}
   - component: {fileID: 1965681713}
   - component: {fileID: 1965681714}
-  - component: {fileID: 1965681716}
   - component: {fileID: 1965681715}
   - component: {fileID: 1965681718}
   - component: {fileID: 1965681719}
@@ -1536,6 +1535,7 @@ GameObject:
   - component: {fileID: 1965681727}
   - component: {fileID: 1965681726}
   - component: {fileID: 1965681729}
+  - component: {fileID: 1965681716}
   m_Layer: 0
   m_Name: chap1 before
   m_TagString: Untagged
@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 22.090912, y: 43}
+  scrollPos: {x: 37, y: 183}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -1597,7 +1597,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 68
     y: 70
-    width: 112.4
+    width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1650,7 +1650,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1965681716
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

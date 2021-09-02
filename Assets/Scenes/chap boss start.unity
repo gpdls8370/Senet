@@ -1292,6 +1292,7 @@ GameObject:
   - component: {fileID: 1790334941}
   - component: {fileID: 1790334943}
   - component: {fileID: 1790334942}
+  - component: {fileID: 1790334944}
   m_Layer: 0
   m_Name: chapter boss
   m_TagString: Untagged
@@ -1312,11 +1313,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 491.94623, y: 385.04123}
+  scrollPos: {x: 33.213776, y: 181.18182}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.34000033
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1382,14 +1383,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 74.34508
     y: 71.818184
-    width: 108.82347
+    width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
   blockName: New Block
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1790334944}
   commandList:
   - {fileID: 1790334976}
   - {fileID: 1790334930}
@@ -2100,6 +2101,21 @@ MonoBehaviour:
   move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &1790334944
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790334916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1790334919}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!114 &1790334958
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2983,7 +2999,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

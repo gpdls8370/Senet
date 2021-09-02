@@ -56,6 +56,10 @@ public class Teleport : MonoBehaviour
     public void MovePlayer()
     {
         targetObj = StateManager.Instance.Player;
+        if (ChapterManager.Instance != null)
+        {
+            ChapterManager.Instance.SetChapter3Available();
+        }
         StartCoroutine(TeleportRoutine());
     }
 

@@ -19895,12 +19895,12 @@ PrefabInstance:
     - target: {fileID: 8711335342463673241, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 300.89
       objectReference: {fileID: 0}
     - target: {fileID: 8711335342463673241, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: 63.21
       objectReference: {fileID: 0}
     - target: {fileID: 8711335342463673241, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
@@ -25819,8 +25819,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00a6cab845d4ff41938dea7653b47e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 2133950107}
-  answer: hope
 --- !u!1 &2839912904221120067
 GameObject:
   m_ObjectHideFlags: 0
@@ -27588,7 +27586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1702, y: 83}
+  m_AnchoredPosition: {x: 70, y: 1022}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &8729930806226439764

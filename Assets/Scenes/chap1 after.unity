@@ -818,7 +818,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -887,6 +887,7 @@ GameObject:
   - component: {fileID: 953948097}
   - component: {fileID: 953948096}
   - component: {fileID: 953948098}
+  - component: {fileID: 953948099}
   m_Layer: 0
   m_Name: chapter1 after
   m_TagString: Untagged
@@ -907,11 +908,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 170.9265, y: 103.53757}
+  scrollPos: {x: 32.92321, y: 181.27586}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.5800003
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -920,8 +921,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 953948086}
-  selectedCommands:
-  - {fileID: 953948094}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -949,14 +949,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.54232
     y: 71.72414
-    width: 110.68962
+    width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
   blockName: New Block
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 953948099}
   commandList:
   - {fileID: 953948098}
   - {fileID: 953948094}
@@ -1286,6 +1286,21 @@ MonoBehaviour:
   move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &953948099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953948084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 953948086}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1 &967041707
 GameObject:
   m_ObjectHideFlags: 0

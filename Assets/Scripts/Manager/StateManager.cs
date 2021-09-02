@@ -16,6 +16,8 @@ public class StateManager : Singleton<StateManager>
     {
         base.Awake();
         animator = Player.GetComponentInChildren<Animator>();
+        Resume();
+        PlayerResume();
     }
 
     public void SetMovementState(MovementStates state)

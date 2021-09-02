@@ -539,6 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDetected: 0
   DeadAfterDetected: 1
+  PauseAfterDetected: 1
   DetectedIconObject: {fileID: 0}
   DetectedIconImage: {fileID: 0}
   DamageAmount: 1
@@ -13889,6 +13890,8 @@ MonoBehaviour:
   toObj: {fileID: 0}
   CameraMoveTo: {fileID: 0}
   CanTeleport: 1
+  StageMove: 0
+  StageName: 
 --- !u!61 &1172990445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16278,7 +16281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799565239e479624f961de8547fb1d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalBossTime: 300
+  TotalBossTime: 5
   NowTime: 0
   lifeBox: {fileID: 610096272}
 --- !u!1001 &1481064140
@@ -17070,6 +17073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDetected: 0
   DeadAfterDetected: 0
+  PauseAfterDetected: 1
   DetectedIconObject: {fileID: 0}
   DetectedIconImage: {fileID: 0}
   DamageAmount: 1
@@ -19526,6 +19530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDetected: 0
   DeadAfterDetected: 0
+  PauseAfterDetected: 1
   DetectedIconObject: {fileID: 0}
   DetectedIconImage: {fileID: 0}
   DamageAmount: 1
@@ -20771,7 +20776,7 @@ Transform:
   m_GameObject: {fileID: 2056305354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.4, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.5732371}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.5732371}
   m_Children:
   - {fileID: 1951897985}
   - {fileID: 2045173864}
@@ -26203,7 +26208,7 @@ Transform:
   m_GameObject: {fileID: 1909670150992974159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.38, y: -2.75, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.0683}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.0683}
   m_Children:
   - {fileID: 1909670149965473459}
   - {fileID: 1909670149897953418}
@@ -26245,6 +26250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b55328b5f3f05e41a8fbe5fa3923f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   DashDuration: 0.1
   DashDistance: 10
   DashCooltime: 5
@@ -26328,6 +26334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5458fc39b4b044b8ecca7be89eded2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   Cooltime: 15
   SavePosIcon: {fileID: 1695958783}
   BackEffect: {fileID: 236077929}
@@ -26985,6 +26992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDetected: 0
   DeadAfterDetected: 0
+  PauseAfterDetected: 1
   DetectedIconObject: {fileID: 0}
   DetectedIconImage: {fileID: 0}
   DamageAmount: 1
