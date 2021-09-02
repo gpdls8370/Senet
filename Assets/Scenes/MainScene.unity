@@ -1194,22 +1194,22 @@ PrefabInstance:
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter1_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter2_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter3_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: MoveChapterScene_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc32d64ea6bad174caeabbd713f9f2fa, type: 3}

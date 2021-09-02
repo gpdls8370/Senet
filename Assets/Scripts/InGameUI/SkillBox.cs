@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class SkillBox : MonoBehaviour
 {
     public GameObject HideIcon;
-
     public Image HideIconImage;
+
+    public GameObject DashIcon;
     public Image DashIconImage;
+
     public Image TimebackIconImage;
 
     public float BoxUnableAlpha = 0.3f;
@@ -16,12 +18,19 @@ public class SkillBox : MonoBehaviour
     public void HideIconEnable()
     {
         HideIcon.SetActive(true);
-        HideIcon.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+        HideIconImage.color = new Color(1f, 1f, 1f, 1f);
     }
 
     public void HideIconUnable()
     {
-        HideIcon.SetActive(true);
-        HideIcon.GetComponent<Image>().color = new Color(1f, 1f, 1f, BoxUnableAlpha);
+        if(BoxUnableAlpha == 0)
+        {
+            HideIcon.SetActive(false);
+        }
+        else
+        {
+            HideIcon.SetActive(true);
+            HideIconImage.color = new Color(1f, 1f, 1f, BoxUnableAlpha);
+        }
     }
 }

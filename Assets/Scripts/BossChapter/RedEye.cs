@@ -5,7 +5,8 @@ using UnityEngine;
 public class RedEye : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject RedZone;
+    public GameObject RedZone;
+    [SerializeField] private Sprite CloseImage;
 
     public void StartAttack()
     {
@@ -20,7 +21,14 @@ public class RedEye : MonoBehaviour
 
     public void StopAttack()
     {
-        animator.SetTrigger("CloseEye");
+        if (animator.isActiveAndEnabled)
+        {
+            animator.SetTrigger("CloseEye");
+        }
+        else
+        {
+            GetComponentInChildren<SpriteRenderer>().sprite = CloseImage;
+        }
         Invoke("RedZoneOff", 0.5f);
     }
 

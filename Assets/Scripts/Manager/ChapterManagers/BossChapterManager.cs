@@ -11,6 +11,17 @@ public class BossChapterManager : Singleton<BossChapterManager>
 
     [Header("UI")]
     public LifeBox lifeBox;
+    public GameObject SkillGuidePanel;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (!ChapterManager.Instance.TimebackSkillGuideOn)
+        {
+            UIManager.Instance.Panel_Enable(SkillGuidePanel);
+            ChapterManager.Instance.SetTimebackSkillGuideOn();
+        }
+    }
 
     private void Start()
     {

@@ -44,12 +44,12 @@ public class Teleport : MonoBehaviour
 
         if (Chapter1Manager.Instance != null)
         {
-            Chapter1Manager.Instance.MainCamera.transform.position = new Vector3(CameraMoveTo.position.x, CameraMoveTo.position.y, CameraMoveTo.position.z);
+            Chapter1Manager.Instance.MainCamera.transform.position = new Vector3(CameraMoveTo.position.x, CameraMoveTo.position.y, -20);
         }
 
         else if (Chapter2Manager.Instance != null)
         {
-            Chapter2Manager.Instance.MainCamera.transform.position = new Vector3(CameraMoveTo.position.x, CameraMoveTo.position.y, CameraMoveTo.position.z);
+            Chapter2Manager.Instance.MainCamera.transform.position = new Vector3(CameraMoveTo.position.x, CameraMoveTo.position.y, -20);
         }
     }
 

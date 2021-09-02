@@ -7,8 +7,9 @@ public class BlackEye : HideDetect
     [SerializeField] private float InvincibleDelay = 0.5f;
  
     [Header("BlackEye")]
-    [SerializeField] private GameObject HideZone;
+    public GameObject HideZone;
     [SerializeField] private Animator animator;
+    [SerializeField] private Sprite CloseImage;
 
     protected override void Start()
     {
@@ -29,7 +30,14 @@ public class BlackEye : HideDetect
 
     public void StopAttack()
     {
-        animator.SetTrigger("CloseEye");
+        if (animator.isActiveAndEnabled)
+        {
+            animator.SetTrigger("CloseEye");
+        }
+        else
+        {
+            GetComponentInChildren<SpriteRenderer>().sprite = CloseImage;
+        }
         Invoke("HideZoneOff", 0.5f);
     }
 

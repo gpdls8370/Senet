@@ -9,7 +9,8 @@ public class GrayEye : MonoBehaviour
 
     [SerializeField] bool UseAutoUnActive;
     [SerializeField] private float CloseDelay;
-    [SerializeField] private GameObject GrayZone;
+    public GameObject GrayZone;
+    [SerializeField] private Sprite CloseImage;
 
     public void StartAttack()
     {
@@ -17,8 +18,17 @@ public class GrayEye : MonoBehaviour
         StartCoroutine(OpeningCoroutine());
     }
 
+    public void StopAttack()
+    {
+        GetComponentInChildren<SpriteRenderer>().sprite = CloseImage;
+  
+        Invoke("ZoneOff", 0.5f);
+    }
+
     private IEnumerator OpeningCoroutine()
     {
+        Invoke("ZoneOn", 0.5f);
+
         yield return new WaitForSeconds(OpeningDuration);
 
         animator.SetTrigger("CloseEye");
@@ -28,5 +38,15 @@ public class GrayEye : MonoBehaviour
             yield return new WaitForSeconds(CloseDelay);
             GrayZone.SetActive(false);
         }
+    }
+
+    private void ZoneOn()
+    {
+        GrayZone.SetActive(true);
+    }
+
+    private void ZoneOff()
+    {
+        GrayZone.SetActive(false);
     }
 }

@@ -6,14 +6,11 @@ public class Pattern1 : PatternBase
 {
     [Header("패턴1: 검은 눈 회색 눈")]
     [SerializeField] private float DamageStartDelay;
-    [SerializeField] private float EndBlinkDelay;
-
     [SerializeField] private float BlackOpenDelay;
     [SerializeField] private float GrayOpenDelay;
 
     public GameObject blackEye;
     public GameObject grayEye;
-
 
     public override void StartPattern()
     {
@@ -33,7 +30,9 @@ public class Pattern1 : PatternBase
     public override void StopPattern()
     {
         base.StopPattern();
-        //StartCoroutine(EndBlinkCoroutine());
+
+        blackEye.GetComponent<BlackEye>().StopAttack();
+        grayEye.GetComponent<GrayEye>().StopAttack();
 
         blackEye.SetActive(false);
         grayEye.SetActive(false);
@@ -55,24 +54,10 @@ public class Pattern1 : PatternBase
         yield return new WaitForSeconds(GrayOpenDelay);
 
         grayEye.GetComponent<GrayEye>().StartAttack();
-
-        //PlayerManager.Instance.isInvincibleInHide = true;
-        //yield return new WaitForSeconds(DamageStartDelay);
-        //PlayerManager.Instance.isInvincibleInHide = false;
     }
 
-    private IEnumerator EndBlinkCoroutine()
+    public override void Reset()
     {
-        blackEye.GetComponentInChildren<Animator>().SetTrigger("BlinkEye");
-        grayEye.GetComponentInChildren<Animator>().SetTrigger("BlinkEye");
-
-        BossStateManager.Instance.Boss.GetComponent<BossMovement>().PatrolStop();
-
-        yield return new WaitForSeconds(EndBlinkDelay);
-
-        blackEye.SetActive(false);
-        grayEye.SetActive(false);
-
-        BossStateManager.Instance.Boss.GetComponent<BossMovement>().PatrolStart();
+        base.Reset();
     }
 }

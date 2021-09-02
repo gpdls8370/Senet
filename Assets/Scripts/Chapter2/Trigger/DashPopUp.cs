@@ -8,10 +8,10 @@ public class DashPopUp : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (!Chapter2Manager.Instance.DashPopupOn)
+            if (!ChapterManager.Instance.DashSkillGuideOn)
             {
                 UIManager.Instance.Panel_Enable(Chapter2Manager.Instance.DashSkillGuide);
-                Chapter2Manager.Instance.DashPopupOn = true;
+                ChapterManager.Instance.SetDashSkillGuideOn();
                 Chapter2Manager.Instance.DashSkillIconOn();
             } 
         }

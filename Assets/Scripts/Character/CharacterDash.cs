@@ -64,9 +64,17 @@ public class CharacterDash : MonoBehaviour
         {
             CooltimeCounter -= Time.deltaTime;
 
-            if (UIManager.Instance.skillBox.DashIconImage != null)
+            if (UIManager.Instance.skillBox.DashIcon != null && UIManager.Instance.skillBox.DashIconImage != null)
             {
+                UIManager.Instance.skillBox.DashIcon.SetActive(true);
                 UIManager.Instance.skillBox.DashIconImage.fillAmount = 1 - CooltimeCounter / DashCooltime;
+            }
+        }
+        else
+        {
+            if (Chapter2Manager.Instance != null && UIManager.Instance.skillBox.DashIcon != null)
+            {
+                UIManager.Instance.skillBox.DashIcon.SetActive(false);
             }
         }
     }

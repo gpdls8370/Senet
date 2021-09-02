@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LightingWindow : MonoBehaviour
 {
-    public AudioClip clip;
     private SpriteRenderer spr;
     private bool Disappearing;
     private Color color;
@@ -19,7 +18,7 @@ public class LightingWindow : MonoBehaviour
 
     private void Update()
     {
- 
+
         if (Disappearing && color.a > 0)
         {
             nowTime -= Time.deltaTime;

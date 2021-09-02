@@ -8,8 +8,6 @@ public class Chapter2Manager : Singleton<Chapter2Manager>
     public float LightingTime;      //시작후 번개 친 다음 1초 쉬고, 다시 6초 뒤 번개 (번개치고 7초뒤 다시번개)
     [SerializeField] private GameObject DashIcon;
 
-    [HideInInspector] public bool DashPopupOn = false;
-
     [Header("Panel")]
     public GameObject TrashCanInteract;
     public GameObject DashSkillGuide;

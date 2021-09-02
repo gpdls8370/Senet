@@ -23,6 +23,8 @@ public class Pattern5 : PatternBase
 
     private IEnumerator PatternCoroutine()
     {
+        Debug.Log("123");
+
         yield return new WaitForSeconds(1f);    //올라가는 모션 기다리기
 
         RedEye.SetActive(true);

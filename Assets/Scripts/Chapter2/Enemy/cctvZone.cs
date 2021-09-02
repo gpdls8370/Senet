@@ -23,7 +23,7 @@ public class cctvZone : MonoBehaviour
 
     private IEnumerator CCTVCoroutine()
     {
-        if (clip != null)
+        if (clip != null && SoundManager.instance != null)
         {
             SoundManager.instance.SFXPlay("thunder", clip);
         }

@@ -35,15 +35,13 @@ public class Pattern4 : PatternBase
 
         yield return new WaitForSeconds(RealTypes[bombType].GetShowTime());
 
-
-
-
         StopPattern();
     }
 
     public override void StopPattern()
     {
         base.StopPattern();
+        BossPatternManager.Instance.StopPattern();
         SwitchIdle();
     }
 }

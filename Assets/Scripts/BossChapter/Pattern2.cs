@@ -22,7 +22,6 @@ public class Pattern2 : PatternBase
     {
         if (KnifeSpawned)
         {
-
             for (int i=0;i< KnifeList.Length; i++)
             {
                 if (KnifeList[i].activeInHierarchy)
@@ -30,6 +29,7 @@ public class Pattern2 : PatternBase
                     return;
                 }
             }
+            KnifeSpawned = false;
             StopPattern();
         }
     }
@@ -58,8 +58,8 @@ public class Pattern2 : PatternBase
 
     public override void StopPattern()
     {
-        BossPatternManager.Instance.StopPattern();
         SwitchIdle();
+        BossPatternManager.Instance.StopPattern();
         Reset();
     }
 

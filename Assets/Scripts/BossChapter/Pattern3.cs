@@ -94,6 +94,16 @@ public class Pattern3 : PatternBase
 
     public override void Reset()
     {
+        base.Reset();
+        IllusionPatterns[0].GetComponent<BlackEye>().StopAttack();
+        IllusionPatterns[1].GetComponent<GrayEye>().StopAttack();
+        IllusionPatterns[2].GetComponent<RedEye>().StopAttack();
+
+        PlayerPatterns[0].GetComponent<BlackEye>().StopAttack();
+        PlayerPatterns[1].GetComponent<GrayEye>().StopAttack();
+        PlayerPatterns[2].GetComponent<RedEye>().StopAttack();
+
         RandomPattern = new int[3];
+
     }
 }

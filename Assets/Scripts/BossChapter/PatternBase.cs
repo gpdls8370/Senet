@@ -43,6 +43,7 @@ public class PatternBase : MonoBehaviour
 
     protected void SwitchStretch()
     {
+        ResetTrigger();
         goTime = 0f;
         goUp = true;
         BossAnimator.SetTrigger("Stretch");
@@ -50,13 +51,15 @@ public class PatternBase : MonoBehaviour
 
     protected void SwitchIdle()
     {
+        ResetTrigger();
         goTime = 0f;
         goDown = true;
-        BossAnimator.SetTrigger("Idle");
+        BossAnimator.SetTrigger("Idle");   
     }
 
     protected void SwitchThrow()
     {
+        ResetTrigger();
         BossAnimator.SetTrigger("Throw");
     }
 
@@ -72,6 +75,12 @@ public class PatternBase : MonoBehaviour
 
     public virtual void Reset()
     {
-
+        
+    }
+    private void ResetTrigger()
+    {
+        BossAnimator.ResetTrigger("Idle");
+        BossAnimator.ResetTrigger("Stretch");
+        BossAnimator.ResetTrigger("Throw");
     }
 }

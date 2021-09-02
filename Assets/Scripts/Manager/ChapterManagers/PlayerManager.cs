@@ -25,7 +25,7 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         NowLife -= damage;
         BossChapterManager.Instance.lifeBox.LoseLife(damage);
-        
+
         if (NowLife <= 0)
         {
             StateManager.Instance.PlayerPause();
