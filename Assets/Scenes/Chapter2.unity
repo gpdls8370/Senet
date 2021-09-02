@@ -26389,7 +26389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00a6cab845d4ff41938dea7653b47e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 0}
+  inputField: {fileID: 2133950107}
   answer: hope
 --- !u!1 &2839912904221120067
 GameObject:
