@@ -26614,7 +26614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b55328b5f3f05e41a8fbe5fa3923f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 5852e460b3f2d0d4f96942d2107fa857, type: 3}
+  clip: {fileID: 0}
   DashDuration: 0.1
   DashDistance: 10
   DashCooltime: 5
@@ -26698,7 +26698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5458fc39b4b044b8ecca7be89eded2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 6f2b3e82aa147c84c93e93ca55160535, type: 3}
+  clip: {fileID: 0}
   Cooltime: 15
   SavePosIcon: {fileID: 1695958783}
   BackEffect: {fileID: 236077929}
