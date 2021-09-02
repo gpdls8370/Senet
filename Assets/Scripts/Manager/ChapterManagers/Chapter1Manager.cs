@@ -17,4 +17,5 @@ public class Chapter1Manager : Singleton<Chapter1Manager>
     public GameObject Road2_RoomMoveTryPanel;
     public GameObject Road4_EnterPanel;
     public GameObject HideTextPanel;
+    public GameObject FindKeyPanel;
 }

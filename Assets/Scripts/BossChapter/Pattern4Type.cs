@@ -11,6 +11,7 @@ public class BombArray
 
 public class Pattern4Type : MonoBehaviour
 {
+    public AudioClip clip;
     [SerializeField] private float ShowDelayTime;
     [SerializeField] private BombArray[] BombList;
 
@@ -26,7 +27,10 @@ public class Pattern4Type : MonoBehaviour
             foreach (GameObject bomb in BombList[i].Bombs)
             {
                 bomb.SetActive(true);
+                if (!bomb.GetComponent<Bomb>().Illusion)
+                    SoundManager.instance.SFXPlay("bomb", clip);
             }
+
             yield return new WaitForSeconds(ShowDelayTime);
         }
     }

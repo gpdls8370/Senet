@@ -6,7 +6,7 @@ public class Bomb : MonoBehaviour
 {
     public float BombFallingDealy;
     [SerializeField] private float InvincibleTime;
-    [SerializeField] private bool Illusion;
+     public bool Illusion;
 
     private bool isEnable;
     private bool isInvincible;

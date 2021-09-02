@@ -37,8 +37,12 @@ public class CharacterDash : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(dashKey) && cooldownReady)
-        {
-            SoundManager.instance.SFXPlay("dash", clip);
+        { 
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.SFXPlay("dash", clip);
+            }
+
             DashStart();
         }
 

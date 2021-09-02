@@ -522,7 +522,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: bb145366ce7024469a5758b08d31802c, type: 3}
+    m_Font: {fileID: 12800000, guid: 6f35512f5b3a59f46baf20bf1e6e5c24, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -1315,6 +1315,7 @@ GameObject:
   - component: {fileID: 1011000945}
   - component: {fileID: 1011000956}
   - component: {fileID: 1011000957}
+  - component: {fileID: 1011000958}
   m_Layer: 0
   m_Name: chapter2 before
   m_TagString: Untagged
@@ -1579,15 +1580,15 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 68
-    y: 70
-    width: 112.4
+    y: 71.42857
+    width: 111.714264
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
   blockName: New Block
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1011000958}
   commandList:
   - {fileID: 1011000957}
   - {fileID: 1011000952}
@@ -1613,11 +1614,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 37.799988, y: 39}
+  scrollPos: {x: 142.9025, y: 238.58015}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 406
-  zoom: 1
+  zoom: 0.7000003
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1626,7 +1627,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1011000953}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1011000945}
   variables: []
   description: 
   stepPause: 0
@@ -1689,10 +1691,10 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 453227357}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 1e26a27ee4df35e4d87dc47fa025c61a, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 605128285}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -1701,6 +1703,21 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &1011000958
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011000944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1011000953}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1 &1334688551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2220,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 79197ecfbc3a4294a89ce589dac02cf2, type: 3}
+    m_Font: {fileID: 12800000, guid: 6f35512f5b3a59f46baf20bf1e6e5c24, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0

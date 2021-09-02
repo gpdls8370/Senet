@@ -12,15 +12,30 @@ EditorBuildSettings:
     path: Assets/Scenes/ChapterScene.unity
     guid: e1e04aced55fdeb44a44b7eec1079f02
   - enabled: 1
+    path: Assets/Scenes/chap1 before.unity
+    guid: 44f4a0cf58093e848b9468d758100fc2
+  - enabled: 1
     path: Assets/Scenes/Chapter1.unity
     guid: d4e0d0f469fbcfa4c98dbdbd799a75eb
   - enabled: 1
-    path: Assets/Scenes/chap1 before.unity
-    guid: 44f4a0cf58093e848b9468d758100fc2
+    path: Assets/Scenes/chap1 after.unity
+    guid: d0de9db296eba8c429236bfb56fbe6f8
+  - enabled: 1
+    path: Assets/Scenes/chap2 before.unity
+    guid: 80603f8e971db354c8b1b9f56c7bc697
+  - enabled: 1
+    path: Assets/Scenes/Chapter2.unity
+    guid: 9b2fbde31df4e2a499474956ecfab8a6
+  - enabled: 1
+    path: Assets/Scenes/chap2 after.unity
+    guid: 6f92c46c407a8e74fb016de674646afc
+  - enabled: 1
+    path: Assets/Scenes/chap boss start.unity
+    guid: 7cd130fc79164e04280a96b676fb1ca3
   - enabled: 1
     path: Assets/Scenes/Boss.unity
     guid: d3d9b44002abcc944930fe10e4962937
   - enabled: 1
-    path: Assets/Scenes/chap2 before.unity
-    guid: 80603f8e971db354c8b1b9f56c7bc697
+    path: Assets/Scenes/chap boss end.unity
+    guid: 5816bcbfbb0e0684aaaccfb3d12d051c
   m_configObjects: {}

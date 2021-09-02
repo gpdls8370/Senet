@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Pattern4 : PatternBase
 {
     [SerializeField] private int TypesNum;
@@ -33,6 +34,9 @@ public class Pattern4 : PatternBase
         RealTypes[bombType].TypeActionStart();
 
         yield return new WaitForSeconds(RealTypes[bombType].GetShowTime());
+
+
+
 
         StopPattern();
     }

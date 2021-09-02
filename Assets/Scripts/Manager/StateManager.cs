@@ -16,6 +16,8 @@ public class StateManager : Singleton<StateManager>
     {
         base.Awake();
         animator = Player.GetComponentInChildren<Animator>();
+        Resume();
+        PlayerResume();
     }
 
     public void SetMovementState(MovementStates state)
@@ -53,22 +55,26 @@ public class StateManager : Singleton<StateManager>
     public void Pause()
     {
         Time.timeScale = 0;
+        PlayerPause();
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
+        PlayerResume();
     }
 
     public void PlayerPause()
     {
         Player.GetComponent<CharacterMovement>().enabled = false;
+        Player.GetComponent<CharacterDash>().enabled = false;
         SetMovementState(MovementStates.Idle);
     }
 
     public void PlayerResume()
     {
         Player.GetComponent<CharacterMovement>().enabled = true;
+        Player.GetComponent<CharacterDash>().enabled = true;
     }
 
     public bool isWalking() { return nowMovementState == MovementStates.Walk; }

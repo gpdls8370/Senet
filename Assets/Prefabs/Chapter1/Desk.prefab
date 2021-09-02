@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3688683342844508525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.82, z: 0}
-  m_LocalScale: {x: 0.9137998, y: 0.9429201, z: 0.6520254}
+  m_LocalScale: {x: 2, y: 2, z: 0.6520254}
   m_Children: []
   m_Father: {fileID: 3688683342882798700}
   m_RootOrder: 0
@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 3688683342882798994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.91, y: -16.71, z: 0}
-  m_LocalScale: {x: 1.0383121, y: 1.0062459, z: 1.4551723}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1.4551723}
   m_Children:
   - {fileID: 3688683342844508524}
   - {fileID: 6796721582825567407}
@@ -242,6 +242,7 @@ MonoBehaviour:
   chatBox: {fileID: 1991284451801667156}
   StartDelayTime: 0
   NextLineDelayTime: 2
+  isChatting: 0
 --- !u!1001 &3688683340959427372
 PrefabInstance:
   m_ObjectHideFlags: 0

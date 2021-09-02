@@ -9,6 +9,7 @@ public class HideZone : MonoBehaviour
     private SleepCycle _sleepCycle;
 
     private bool mustHide = false;
+    public bool mustDetected = false;
     public float MustHideDelay = 0.5f;
 
     private void Awake()
@@ -31,7 +32,7 @@ public class HideZone : MonoBehaviour
                 _hideSkill.CanHide = true;
             }
 
-            if (_hideDetect.DetectedIconObject != null)
+            if (_hideDetect != null && _hideDetect.DetectedIconObject != null)
             {
                 _hideDetect.DetectedIconObject.SetActive(true);
             }
@@ -45,8 +46,16 @@ public class HideZone : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            if (!_hideDetect.isDetected && !PlayerManager.Instance.isInvincibleInHide)
+            if (!_hideDetect.isDetected)
             {
+                if (PlayerManager.Instance != null)
+                {
+                    if (PlayerManager.Instance.isInvincibleInHide)
+                    {
+                        return;
+                    }
+                }
+
                 if (_sleepCycle != null) 
                 {
                     if (_sleepCycle.isAwake)
@@ -58,7 +67,12 @@ public class HideZone : MonoBehaviour
                 if (mustHide && !StateManager.Instance.isHiding())
                 {
                     _hideDetect.Detected();
-                }           
+                }
+
+                if (mustDetected)
+                {
+                    _hideDetect.Detected();
+                }
             }
         }
     }

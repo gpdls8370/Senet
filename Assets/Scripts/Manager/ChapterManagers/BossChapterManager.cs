@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossChapterManager : Singleton<BossChapterManager>
 {
@@ -19,5 +20,11 @@ public class BossChapterManager : Singleton<BossChapterManager>
     private void Update()
     {
         NowTime -= Time.deltaTime;
+
+        if (NowTime <= 0)
+        {
+            //클리어
+            SceneManager.LoadScene("chap boss end");
+        }
     }
 }
