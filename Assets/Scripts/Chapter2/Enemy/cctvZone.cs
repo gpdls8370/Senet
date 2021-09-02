@@ -12,25 +12,26 @@ public class cctvZone : MonoBehaviour
         StartCoroutine(CCTVCoroutine());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && cctvON)
         {
-            StateManager.Instance.SetDead();
+            UIManager.Instance.Panel_Enable(Chapter2Manager.Instance.cctcDetected);
         }
     }
 
     private IEnumerator CCTVCoroutine()
     {
-        cctvON = true;
-        spriteRenderer.enabled = true;
-
-        yield return new WaitForSeconds(6f);
-
         cctvON = false;
         spriteRenderer.enabled = false;
 
         yield return new WaitForSeconds(1f);
+
+        cctvON = true;
+        spriteRenderer.enabled = true;
+
+        yield return new WaitForSeconds(Chapter2Manager.Instance.LightingTime);
+
 
         StartCoroutine(CCTVCoroutine());
     }

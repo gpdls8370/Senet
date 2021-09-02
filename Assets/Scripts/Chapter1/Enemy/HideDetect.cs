@@ -6,6 +6,7 @@ public class HideDetect : MonoBehaviour
 {
     public bool isDetected = false;
     public bool DeadAfterDetected = true;
+    public bool PauseAfterDetected = true;
     public GameObject DetectedIconObject;
     public Sprite DetectedIconImage;
 
@@ -46,6 +47,11 @@ public class HideDetect : MonoBehaviour
             {
                 StateManager.Instance.SetDead();
                 StateManager.Instance.PlayerPause(); 
+            }
+
+            if (PauseAfterDetected)
+            {
+                StateManager.Instance.PlayerPause();
             }
 
             StopAllCoroutines();

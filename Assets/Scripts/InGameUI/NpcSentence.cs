@@ -8,9 +8,15 @@ public class NpcSentence : MonoBehaviour
     public float StartDelayTime;
     public float NextLineDelayTime;
 
+    [HideInInspector] public bool isChatting;
+
     public void TalkNpc()
     {
-        Invoke("TalkNpcDelay", StartDelayTime);
+        if (!isChatting)
+        {
+            isChatting = true;
+            Invoke("TalkNpcDelay", StartDelayTime);
+        }
     }
 
     private void TalkNpcDelay()

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Teleport : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Teleport : MonoBehaviour
     public Transform CameraMoveTo;
 
     public bool CanTeleport;
+
+    [SerializeField] private bool StageMove = false;
+    [SerializeField] private string StageName;
     
     private void OnTriggerEnter2D (Collider2D collision)
     {
@@ -15,7 +19,6 @@ public class Teleport : MonoBehaviour
         {
             targetObj = collision.gameObject;
             TryTeleport();
-            
         }
     }
 
@@ -23,7 +26,14 @@ public class Teleport : MonoBehaviour
     {
         if (CanTeleport)
         {
-            StartCoroutine(TeleportRoutine());
+            if (StageMove)
+            {
+                SceneManager.LoadScene(StageName);
+            }
+            else
+            {
+                StartCoroutine(TeleportRoutine());
+            }
         }
     }
 
@@ -41,6 +51,12 @@ public class Teleport : MonoBehaviour
         {
             Chapter2Manager.Instance.MainCamera.transform.position = new Vector3(CameraMoveTo.position.x, CameraMoveTo.position.y, CameraMoveTo.position.z);
         }
+    }
+
+    public void MovePlayer()
+    {
+        targetObj = StateManager.Instance.Player;
+        StartCoroutine(TeleportRoutine());
     }
 
 }
