@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class cctvZone : MonoBehaviour
 {
+    public AudioClip clip;
     private bool cctvON;
     private SpriteRenderer spriteRenderer;
 
@@ -22,6 +23,13 @@ public class cctvZone : MonoBehaviour
 
     private IEnumerator CCTVCoroutine()
     {
+        if (clip != null)
+        {
+            SoundManager.instance.SFXPlay("thunder", clip);
+        }
+
+        yield return new WaitForSeconds(0.8f);
+
         cctvON = false;
         spriteRenderer.enabled = false;
 
@@ -30,7 +38,7 @@ public class cctvZone : MonoBehaviour
         cctvON = true;
         spriteRenderer.enabled = true;
 
-        yield return new WaitForSeconds(Chapter2Manager.Instance.LightingTime);
+        yield return new WaitForSeconds(Chapter2Manager.Instance.LightingTime - 0.8f);
 
 
         StartCoroutine(CCTVCoroutine());

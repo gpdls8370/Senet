@@ -24,11 +24,11 @@ public class StorageAction : MonoBehaviour
            
             if (TimeCount < 4)
             {
-                Top.position = Vector2.Lerp(Top.position, topTargetPos.position, TimeCount / 1000);
+                Top.position = Vector2.Lerp(Top.position, topTargetPos.position, TimeCount / 2000);
                 Buttom.position = Vector2.Lerp(Buttom.position, buttomTargetPos.position, TimeCount / 2000);
             }
 
-            if (TimeCount > 7)
+            if (TimeCount > 5.5f)
             {
                 isAction = false;
                 StateManager.Instance.Player.GetComponentInChildren<Animator>().SetTrigger("WalkEnd");

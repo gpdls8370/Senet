@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LightingWindow : MonoBehaviour
 {
+    public AudioClip clip;
     private SpriteRenderer spr;
     private bool Disappearing;
     private Color color;
@@ -18,6 +19,7 @@ public class LightingWindow : MonoBehaviour
 
     private void Update()
     {
+ 
         if (Disappearing && color.a > 0)
         {
             nowTime -= Time.deltaTime;
@@ -32,14 +34,14 @@ public class LightingWindow : MonoBehaviour
 
     private IEnumerator LightCoroutine()
     {
+        yield return new WaitForSeconds(1f);
+
         nowTime = removeDuration;
         spr.enabled = true;
         color.a = 1f;
         Disappearing = true;
 
         yield return new WaitForSeconds(Chapter2Manager.Instance.LightingTime);
-
-        yield return new WaitForSeconds(1f);
 
         StartCoroutine(LightCoroutine());
     }
