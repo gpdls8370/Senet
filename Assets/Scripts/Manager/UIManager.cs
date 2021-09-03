@@ -13,6 +13,11 @@ public class UIManager : Singleton<UIManager>
         StateManager.Instance.Pause();
     }
 
+    public void Panel_Enable_NotPause(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
+
     public void Panel_MoveButton_Move(GameObject movePanel)
     {
         movePanel.SetActive(true);

@@ -538,8 +538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
-  DeadAfterDetected: 1
-  PauseAfterDetected: 1
+  DeadAfterDetected: 0
+  PauseAfterDetected: 0
   DetectedIconObject: {fileID: 0}
   DetectedIconImage: {fileID: 0}
   DamageAmount: 1
@@ -717,6 +717,8 @@ MonoBehaviour:
   Chapter1_Unlock: 0
   Chapter2_Unlock: 0
   Chapter3_Unlock: 0
+  Chapter1ClearDoor: 0
+  Chapter2ClearDoor: 0
   HideSkillGuideOn: 0
   DashSkillGuideOn: 0
   TimebackSkillGuideOn: 0
@@ -732,7 +734,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &102408092
 GameObject:
@@ -6071,7 +6073,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009926558, y: -0.26317614}
+  m_Offset: {x: 0.5091257, y: -0.55635643}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6082,7 +6084,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3021216, y: 4.35232}
+  m_Size: {x: 1.8108463, y: 4.6534243}
   m_EdgeRadius: 0
 --- !u!4 &194812287
 Transform:
@@ -7737,8 +7739,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -416927445
-  m_SortingLayer: -1
+  m_SortingLayerID: 1852315863
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 876191bc8d7174645a2fac9aa99e7c81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14384,8 +14386,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 195048747
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b532a0f3b9b3f4468b4d9cd5274fa26, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.78039217}
@@ -16743,7 +16745,7 @@ MonoBehaviour:
     UseEndDelay: 1
     EndDelay: 19
   - PatternState: 3
-    StartTime: 105
+    StartTime: 100
     UseEndDelay: 0
     EndDelay: 0
   - PatternState: 3
@@ -17282,7 +17284,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -17371,12 +17373,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524421348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -1.0328102, z: -34.410343}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -197.20312, y: -22.429747, z: 81.15997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1552340805}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533920462 stripped
 GameObject:
@@ -17497,6 +17499,37 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1451092828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1552340804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552340805}
+  m_Layer: 0
+  m_Name: Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1552340805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552340804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 195.20312, y: 21.396936, z: -115.57031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1524421350}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564311458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8471009278448976275, guid: adb2de8e0e2cb5d43aa161dbed4aa3c1,
@@ -19098,8 +19131,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 195048747
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b532a0f3b9b3f4468b4d9cd5274fa26, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.78039217}
@@ -19329,8 +19362,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 195048747
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b532a0f3b9b3f4468b4d9cd5274fa26, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.78039217}
@@ -20115,8 +20148,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1892460319}
-  - component: {fileID: 1892460321}
   - component: {fileID: 1892460320}
+  - component: {fileID: 1892460321}
   m_Layer: 11
   m_Name: SideBlackEye
   m_TagString: Enemy
@@ -21244,7 +21277,7 @@ MonoBehaviour:
   - {fileID: 458473229}
   IllusionCharacter: {fileID: 2056305354}
   IllusionAttackDelay: 2
-  IllusionEndTime: 7
+  IllusionEndTime: 7.5
   PlayerPatternSpawnDelay: 2
 --- !u!4 &2003027528 stripped
 Transform:
@@ -26983,7 +27016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 6f2b3e82aa147c84c93e93ca55160535, type: 3}
-  Cooltime: 15
+  Cooltime: 10
   SavePosIcon: {fileID: 1695958783}
   BackEffect: {fileID: 236077929}
   Front: {fileID: -2690792559708188323, guid: a8f1ed801973a914eab318eb6d6f3727, type: 3}
@@ -27742,6 +27775,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 2668842629102191662, guid: a009aa047cc981048bdb21f1e3ef8035,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2668842629960830676, guid: a009aa047cc981048bdb21f1e3ef8035,
         type: 3}
       propertyPath: m_Color.a
@@ -28198,7 +28236,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447941411353628773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -28473,8 +28511,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -416927445
-  m_SortingLayer: -1
+  m_SortingLayerID: 1852315863
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 876191bc8d7174645a2fac9aa99e7c81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

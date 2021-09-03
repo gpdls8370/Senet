@@ -734,7 +734,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 740ac2f243ba4474c961e4e35d8a3029, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1194,22 +1194,22 @@ PrefabInstance:
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter1_Unlock
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter2_Unlock
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter3_Unlock
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: MoveChapterScene_Unlock
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc32d64ea6bad174caeabbd713f9f2fa, type: 3}

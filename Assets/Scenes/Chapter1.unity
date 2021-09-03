@@ -4484,12 +4484,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774295713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1893544, y: 60, z: -17.601562}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.151903, y: 61.91705, z: 97.765625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1940004196}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &774991959 stripped
 Transform:
@@ -6725,6 +6725,7 @@ MonoBehaviour:
   RockDoorFounded: 0
   RedLight: {fileID: 353511439}
   YellowLight: {fileID: 909882690}
+  SavePointTeleport: {fileID: 1307140833}
   Road2_EnterPanel: {fileID: 2017765588}
   Road2_DoorFindPanel: {fileID: 864520649}
   Road2_RoomMoveTryPanel: {fileID: 1519217928}
@@ -6915,12 +6916,12 @@ PrefabInstance:
     - target: {fileID: 8711335342463673242, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.45224
+      value: 2.0770493
       objectReference: {fileID: 0}
     - target: {fileID: 8711335342463673242, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.28779602
+      value: -0.4753914
       objectReference: {fileID: 0}
     - target: {fileID: 8711335342463673243, guid: 6152c051ecdba144ab2de37764662a4b,
         type: 3}
@@ -8457,8 +8458,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307140831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.61840695, y: 4.3007464, z: -13.674572}
-  m_LocalScale: {x: 1.0718663, y: 0.21042953, z: 1}
+  m_LocalPosition: {x: 3, y: 4.3007464, z: -13.674572}
+  m_LocalScale: {x: 0.3311713, y: 0.21042953, z: 1}
   m_Children: []
   m_Father: {fileID: 1181095986}
   m_RootOrder: 1
@@ -13295,6 +13296,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df26cb5f73d4b4f468f022ffc7191ba2, type: 3}
+--- !u!1 &1940004195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1940004196}
+  m_Layer: 0
+  m_Name: Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1940004196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940004195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.037451506, y: -1.9170498, z: -115.36719}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 774295715}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942876918
 GameObject:
   m_ObjectHideFlags: 0
@@ -13625,6 +13657,8 @@ MonoBehaviour:
   Chapter1_Unlock: 0
   Chapter2_Unlock: 0
   Chapter3_Unlock: 0
+  Chapter1ClearDoor: 0
+  Chapter2ClearDoor: 0
   HideSkillGuideOn: 0
   DashSkillGuideOn: 0
   TimebackSkillGuideOn: 0
@@ -13640,7 +13674,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2007232649 stripped
 Transform:
@@ -14291,8 +14325,8 @@ MonoBehaviour:
   currentSentence: 
   text: {fileID: 6477100651487193028}
   quad: {fileID: 5095622954230487734}
-  PauseAfterChat: 1
-  DeadAfterChat: 0
+  PauseAfterChat: 0
+  DeadAfterChat: 1
   PopupAfterChat: 0
   Popup: {fileID: 0}
 --- !u!23 &677724245172305098
@@ -14363,8 +14397,8 @@ MonoBehaviour:
   currentSentence: 
   text: {fileID: 6538502917595763370}
   quad: {fileID: 5037680181331029976}
-  PauseAfterChat: 1
-  DeadAfterChat: 0
+  PauseAfterChat: 0
+  DeadAfterChat: 1
   PopupAfterChat: 0
   Popup: {fileID: 0}
 --- !u!4 &1008012183936097776
@@ -14435,8 +14469,8 @@ MonoBehaviour:
   currentSentence: 
   text: {fileID: 6895512906723817446}
   quad: {fileID: 4676366823984237204}
-  PauseAfterChat: 1
-  DeadAfterChat: 0
+  PauseAfterChat: 0
+  DeadAfterChat: 1
   PopupAfterChat: 0
   Popup: {fileID: 0}
 --- !u!222 &1205739888785458022
@@ -14966,7 +15000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
-  DeadAfterDetected: 1
+  DeadAfterDetected: 0
   PauseAfterDetected: 1
   DetectedIconObject: {fileID: 1991280847150168979}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}
@@ -15004,7 +15038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
-  DeadAfterDetected: 1
+  DeadAfterDetected: 0
   PauseAfterDetected: 1
   DetectedIconObject: {fileID: 2157492143739906993}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}
@@ -15104,7 +15138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDetected: 0
-  DeadAfterDetected: 1
+  DeadAfterDetected: 0
   PauseAfterDetected: 1
   DetectedIconObject: {fileID: 2210940689836859103}
   DetectedIconImage: {fileID: 21300000, guid: 6745ff4f3a1e8f24f968cd020ce0c2c6, type: 3}

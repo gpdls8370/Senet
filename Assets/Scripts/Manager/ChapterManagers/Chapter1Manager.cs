@@ -9,6 +9,7 @@ public class Chapter1Manager : Singleton<Chapter1Manager>
 
     public GameObject RedLight;
     public GameObject YellowLight;
+    public Teleport SavePointTeleport;
 
     [Header("Panel")]
     public GameObject Road2_EnterPanel;
@@ -17,4 +18,14 @@ public class Chapter1Manager : Singleton<Chapter1Manager>
     public GameObject Road4_EnterPanel;
     public GameObject HideTextPanel;
     public GameObject FindKeyPanel;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        if (ChapterManager.Instance.Chapter1ClearDoor)
+        {
+            SavePointTeleport.MovePlayer();
+        }
+    }
 }

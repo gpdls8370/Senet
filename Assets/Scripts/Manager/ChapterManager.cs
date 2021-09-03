@@ -9,6 +9,10 @@ public class ChapterManager : Singleton<ChapterManager>
     public bool Chapter2_Unlock;     //1챕터를 클리어 했을 때
     public bool Chapter3_Unlock ;    //2챕터를 클리어 했을 때
 
+    [Header("Middle Save")]
+    public bool Chapter1ClearDoor;
+    public bool Chapter2ClearDoor;
+
     [Header("Guide UI")]
     public bool HideSkillGuideOn;
     public bool DashSkillGuideOn;
@@ -41,11 +45,13 @@ public class ChapterManager : Singleton<ChapterManager>
     public void SetChapter2Available()
     {
         Chapter2_Unlock = true;
+        Chapter1ClearDoor = false;
     }
 
     public void SetChapter3Available()
     {
         Chapter3_Unlock = true;
+        Chapter2ClearDoor = false;
     }
 
     public void SetHideSkillGuideOn()

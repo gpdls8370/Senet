@@ -13,6 +13,7 @@ public class Password : MonoBehaviour
         if (inputField.text == answer)
         {
             UIManager.Instance.Panel_Enable(Chapter2Manager.Instance.PasswordSuccess);
+            ChapterManager.Instance.Chapter2ClearDoor = true;
         }
         else
         {

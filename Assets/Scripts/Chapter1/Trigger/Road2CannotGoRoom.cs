@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Road2CannotGoRoom : MonoBehaviour
 {
     private Teleport _teleport;
+    private bool PanelOn;
 
     private void Start()
     {
@@ -15,8 +17,12 @@ public class Road2CannotGoRoom : MonoBehaviour
         {
             if (!Chapter1Manager.Instance.RockDoorFounded)
             {
-                _teleport.CanTeleport = false;
-                UIManager.Instance.Panel_Enable(Chapter1Manager.Instance.Road2_RoomMoveTryPanel);
+                if (!PanelOn)
+                {
+                    _teleport.CanTeleport = false;
+                    UIManager.Instance.Panel_Enable(Chapter1Manager.Instance.Road2_RoomMoveTryPanel);
+                    StartCoroutine(PanelOffCoroutine());
+                }
             }
             else
             {
@@ -24,6 +30,13 @@ public class Road2CannotGoRoom : MonoBehaviour
                 _teleport.TryTeleport();
             }
         }
+    }
+
+    private IEnumerator PanelOffCoroutine()
+    {
+        PanelOn = true;
+        yield return new WaitForSeconds(1f);
+        PanelOn = false;
     }
 
 }

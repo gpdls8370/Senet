@@ -19,6 +19,7 @@ public class Road2DoorFind : InteractObject
                 Chapter1Manager.Instance.RedLight.SetActive(false);
                 Chapter1Manager.Instance.YellowLight.SetActive(true);
                 isRocked = false;
+                ChapterManager.Instance.Chapter1ClearDoor = true;
             }
             else
             {

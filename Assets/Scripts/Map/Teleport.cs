@@ -29,6 +29,10 @@ public class Teleport : MonoBehaviour
             if (StageMove)
             {
                 SceneManager.LoadScene(StageName);
+                if (StageName == "chap2 after" && ChapterManager.Instance != null) 
+                {
+                    ChapterManager.Instance.SetChapter3Available();
+                }
             }
             else
             {
@@ -37,7 +41,7 @@ public class Teleport : MonoBehaviour
         }
     }
 
-    IEnumerator TeleportRoutine()
+    private IEnumerator TeleportRoutine()
     {
         yield return null;
         targetObj.transform.position = new Vector3(toObj.transform.position.x, toObj.transform.position.y, 0);
@@ -56,10 +60,6 @@ public class Teleport : MonoBehaviour
     public void MovePlayer()
     {
         targetObj = StateManager.Instance.Player;
-        if (ChapterManager.Instance != null)
-        {
-            ChapterManager.Instance.SetChapter3Available();
-        }
         StartCoroutine(TeleportRoutine());
     }
 

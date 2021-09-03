@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
 {
     
     public AudioClip[] bglist;
+    private AudioSource audiosource;
+    private GameObject go;
 
     public static SoundManager instance;
     private void Awake()
@@ -24,13 +26,18 @@ public class SoundManager : MonoBehaviour
 
     public void SFXPlay(string sfxName,AudioClip clip)
     {
-        GameObject go = new GameObject(sfxName+"Sound");
-        AudioSource audiosource = go.AddComponent<AudioSource>();
-        audiosource.clip = clip;
-        audiosource.Play();
-
-        Destroy(go, clip.length);
+        if (sfxName != "thunder")
+        {
+            go = new GameObject(sfxName + "Sound");
+            audiosource = go.AddComponent<AudioSource>();
+            audiosource.clip = clip;
+            audiosource.Play();
+            Destroy(go, clip.length);
+        }
+        else
+        {
+            audiosource = GameObject.Find("thunderSound").GetComponent<AudioSource>();
+            audiosource.Play();
+        }    
     }
-
-
 }

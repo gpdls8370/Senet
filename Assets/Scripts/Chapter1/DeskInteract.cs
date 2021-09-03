@@ -14,8 +14,11 @@ public class DeskInteract : InteractObject
         if (isKeyDesk)
         {
             Chapter1Manager.Instance.HaveKey = true;
+            if (!_npcSentence.isChatting)
+            {
+                Invoke("PanelOn", 0.7f);
+            }
             _npcSentence.TalkNpc();
-            Invoke("PanelOn", 1.5f);
         }
 
         else
