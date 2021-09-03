@@ -28,17 +28,17 @@ public class cctvZone : MonoBehaviour
             SoundManager.instance.SFXPlay("thunder", clip);
         }
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.9f);
 
         cctvON = false;
         spriteRenderer.enabled = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         cctvON = true;
         spriteRenderer.enabled = true;
 
-        yield return new WaitForSeconds(Chapter2Manager.Instance.LightingTime - 0.8f);
+        yield return new WaitForSeconds(Chapter2Manager.Instance.LightingTime -0.5f - 0.9f);
 
 
         StartCoroutine(CCTVCoroutine());

@@ -540,8 +540,8 @@ MonoBehaviour:
   isDetected: 0
   DeadAfterDetected: 0
   PauseAfterDetected: 0
-  DetectedIconObject: {fileID: 0}
-  DetectedIconImage: {fileID: 0}
+  DetectedYellowIcon: {fileID: 0}
+  DetectedRedIcon: {fileID: 0}
   DamageAmount: 1
   InvincibleDelay: 0.5
   HideZone: {fileID: 5447941411353628773}
@@ -17738,8 +17738,8 @@ MonoBehaviour:
   isDetected: 0
   DeadAfterDetected: 0
   PauseAfterDetected: 0
-  DetectedIconObject: {fileID: 0}
-  DetectedIconImage: {fileID: 0}
+  DetectedYellowIcon: {fileID: 0}
+  DetectedRedIcon: {fileID: 0}
   DamageAmount: 1
   InvincibleDelay: 0.5
   HideZone: {fileID: 884491364}
@@ -20208,8 +20208,8 @@ MonoBehaviour:
   isDetected: 0
   DeadAfterDetected: 0
   PauseAfterDetected: 0
-  DetectedIconObject: {fileID: 0}
-  DetectedIconImage: {fileID: 0}
+  DetectedYellowIcon: {fileID: 0}
+  DetectedRedIcon: {fileID: 0}
   DamageAmount: 1
   InvincibleDelay: 0.5
   HideZone: {fileID: 1608026522}
@@ -26727,8 +26727,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909670149897953419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.2, z: 0}
+  m_LocalScale: {x: 1.396, y: 1.396, z: 1.396}
   m_Children: []
   m_Father: {fileID: 1909670150992974152}
   m_RootOrder: 1
@@ -26916,7 +26916,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &1909670150992974154
@@ -27674,8 +27674,8 @@ MonoBehaviour:
   isDetected: 0
   DeadAfterDetected: 0
   PauseAfterDetected: 0
-  DetectedIconObject: {fileID: 0}
-  DetectedIconImage: {fileID: 0}
+  DetectedYellowIcon: {fileID: 0}
+  DetectedRedIcon: {fileID: 0}
   DamageAmount: 1
   InvincibleDelay: 0.5
   HideZone: {fileID: 441473743}

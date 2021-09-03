@@ -4937,7 +4937,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &8711335342463673247
@@ -4982,9 +4982,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b55328b5f3f05e41a8fbe5fa3923f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   DashDuration: 0.1
   DashDistance: 10
-  DashCoolTime: 0.2
+  DashCooltime: 0
   CannotMoveLayer: Obstacles
 --- !u!114 &8711335342463673237
 MonoBehaviour:
@@ -4998,6 +4999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de0bdae616dd6b4c99468c019cf86f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideSpeed: 0
   HideAlpha: 0.5
   CanHide: 0
+  HideZoneCount: 0

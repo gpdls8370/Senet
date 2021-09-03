@@ -79,6 +79,7 @@ public class StateManager : Singleton<StateManager>
         Player.GetComponent<CharacterMovement>().enabled = false;
         Player.GetComponent<CharacterDash>().enabled = false;
         Player.GetComponent<BoxCollider2D>().enabled = false;
+        Player.GetComponent<CharacterMovement>().FootSteps.Stop();
         SetMovementState(MovementStates.Idle);
     }
 
@@ -96,7 +97,6 @@ public class StateManager : Singleton<StateManager>
 
     private IEnumerator FadeCoroutine()
     {
-        Debug.Log("11");
         float fadeCount = 0;
         while(fadeCount < 1.0f)
         {

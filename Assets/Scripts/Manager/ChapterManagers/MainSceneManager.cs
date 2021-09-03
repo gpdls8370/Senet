@@ -7,7 +7,7 @@ public class MainSceneManager : MonoBehaviour
 {
     [SerializeField] private Button MoveChapterBt;
 
-    private void Start()
+    private void Awake()
     {
         if (ChapterManager.Instance.MoveChapterScene_Unlock)
         {

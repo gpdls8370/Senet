@@ -27,16 +27,6 @@ public class HideZone : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            if (!_hideSkill.CanHide)
-            {
-                _hideSkill.CanHide = true;
-            }
-
-            if (_hideDetect != null && _hideDetect.DetectedIconObject != null)
-            {
-                _hideDetect.DetectedIconObject.SetActive(true);
-            }
-
             _hideSkill.HideZoneCount++;
             StartCoroutine(HideTimeCountCoroutine());
         }
@@ -46,6 +36,16 @@ public class HideZone : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            if (!_hideSkill.CanHide)
+            {
+                _hideSkill.CanHide = true;
+            }
+
+            if (_hideDetect != null && _hideDetect.DetectedYellowIcon != null)
+            {
+                _hideDetect.DetectedYellowIcon.SetActive(true);
+            }
+
             if (!_hideDetect.isDetected)
             {
                 if (PlayerManager.Instance != null)
@@ -61,12 +61,19 @@ public class HideZone : MonoBehaviour
                     if (_sleepCycle.isAwake)
                     {
                         _hideDetect.Detected();
+                        _sleepCycle.GetComponentInChildren<Animator>().enabled = false;
+                        _sleepCycle.SleepingIcon.SetActive(false);
+                        _sleepCycle.enabled = false;
                     }
                 }
                 
                 if (mustHide && !StateManager.Instance.isHiding())
                 {
                     _hideDetect.Detected();
+                    if(GetComponentInParent<ShakeEnemy>() != null)
+                    {
+                        GetComponentInParent<ShakeEnemy>().transform.GetComponentInChildren<Animator>().enabled = false;
+                    }
                 }
 
                 if (mustDetected)
@@ -84,9 +91,9 @@ public class HideZone : MonoBehaviour
             _hideSkill.CanHide = false;
             UIManager.Instance.skillBox.HideIconUnable();
             mustHide = false;
-            if (_hideDetect.DetectedIconObject != null)
+            if (_hideDetect.DetectedYellowIcon != null)
             {
-                _hideDetect.DetectedIconObject.SetActive(false);
+                _hideDetect.DetectedYellowIcon.SetActive(false);
             }
             _hideSkill.HideZoneCount--;
             StopAllCoroutines();

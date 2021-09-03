@@ -37,4 +37,11 @@ public class ChapterSceneManager : MonoBehaviour
         {
             Chapter3Bt.interactable = false;
         }
-    }}
+    }
+
+    public void SaveReset()
+    {
+        ChapterManager.Instance.Chapter1ClearDoor = false;
+        ChapterManager.Instance.Chapter2ClearDoor = false;
+    }
+}

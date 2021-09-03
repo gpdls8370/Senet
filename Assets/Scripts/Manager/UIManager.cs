@@ -37,7 +37,11 @@ public class UIManager : Singleton<UIManager>
     public void MoveScene(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
-        StateManager.Instance.Resume();
+        if
+            (StateManager.Instance != null)
+        {
+            StateManager.Instance.Resume();
+        }
     }
 
     public void ExitGame()

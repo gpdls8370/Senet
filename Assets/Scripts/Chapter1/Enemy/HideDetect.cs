@@ -7,8 +7,8 @@ public class HideDetect : MonoBehaviour
     public bool isDetected = false;
     public bool DeadAfterDetected = true;
     public bool PauseAfterDetected = true;
-    public GameObject DetectedIconObject;
-    public Sprite DetectedIconImage;
+    public GameObject DetectedYellowIcon;
+    public GameObject DetectedRedIcon;
 
     public int DamageAmount = 1;
 
@@ -32,10 +32,10 @@ public class HideDetect : MonoBehaviour
                 _sleepCycle.SetAwake();
             }
 
-            if (DetectedIconObject != null)
+            if (DetectedYellowIcon != null && DetectedRedIcon != null)
             {
-                DetectedIconObject.SetActive(true);
-                DetectedIconObject.GetComponent<SpriteRenderer>().sprite = DetectedIconImage;
+                DetectedYellowIcon.SetActive(false);
+                DetectedRedIcon.SetActive(true);
             }
      
             if (_npcSentence != null) 

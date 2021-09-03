@@ -10,7 +10,6 @@ public class SleepCycle : MonoBehaviour
 
     public GameObject SleepingIcon;
 
-    [HideInInspector]
     public bool isAwake;
 
     private Animator animator;

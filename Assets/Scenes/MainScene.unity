@@ -612,7 +612,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 63, y: -143}
-  m_SizeDelta: {x: 301, y: 107}
+  m_SizeDelta: {x: 312, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &866143065
 MonoBehaviour:
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 350d4a61734918b4493573aefc10419f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70511138358479946a7e5a5f050cd554, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1194,22 +1194,22 @@ PrefabInstance:
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter1_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter2_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: Chapter3_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3784951253776782564, guid: fc32d64ea6bad174caeabbd713f9f2fa,
         type: 3}
       propertyPath: MoveChapterScene_Unlock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc32d64ea6bad174caeabbd713f9f2fa, type: 3}

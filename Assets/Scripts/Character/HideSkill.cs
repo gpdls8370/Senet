@@ -71,7 +71,7 @@ public class HideSkill : MonoBehaviour
 
             foreach (GameObject sound in Sounds)
             {
-                float f = sound.GetComponent<AudioSource>().volume / 3;
+                float f = sound.GetComponent<AudioSource>().volume / 2;
                 sound.GetComponent<AudioSource>().volume = f;
             }
             soundChangeOnStart = true;
@@ -91,7 +91,7 @@ public class HideSkill : MonoBehaviour
 
             foreach (GameObject sound in Sounds)
             {
-                float f = sound.GetComponent<AudioSource>().volume * 3;
+                float f = sound.GetComponent<AudioSource>().volume * 2;
                 sound.GetComponent<AudioSource>().volume = f;
             }
             soundChangeOnEnd = true;
