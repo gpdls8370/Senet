@@ -9,7 +9,7 @@ public class ChapterSceneManager : MonoBehaviour
     [SerializeField] private Button Chapter2Bt;
     [SerializeField] private Button Chapter3Bt;
 
-    private void Start()
+    private void Awake()
     {
         if (ChapterManager.Instance.Chapter1_Unlock)
         {

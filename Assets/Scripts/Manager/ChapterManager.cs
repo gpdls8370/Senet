@@ -68,6 +68,17 @@ public class ChapterManager : Singleton<ChapterManager>
     {
         TimebackSkillGuideOn = true;
     }
+
+    public void NewGame()
+    {
+        Chapter2_Unlock = false;
+        Chapter3_Unlock = false;
+        HideSkillGuideOn = false;
+        DashSkillGuideOn = false;
+        TimebackSkillGuideOn = false;
+        Chapter1ClearDoor = false;
+        Chapter2ClearDoor = false;
+    }
 }
 
     

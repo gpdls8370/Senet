@@ -14855,6 +14855,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 9139765985091431124, guid: 93b50731f1ddc224a80a3269d1ecee24,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139765985091431124, guid: 93b50731f1ddc224a80a3269d1ecee24,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139765985091431124, guid: 93b50731f1ddc224a80a3269d1ecee24,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 9139765985091431126, guid: 93b50731f1ddc224a80a3269d1ecee24,
         type: 3}
       propertyPath: m_Pivot.x
